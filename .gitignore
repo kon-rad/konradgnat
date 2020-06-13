@@ -5,3 +5,11 @@ node_modules
 grid_search
 .DS_Store
 notes.md
+
+server/config/dev.js
+server/config/prod.js
+server/*/**.csv
+**/**/*.csv
+server/services/budget/config.js
+server/services/budget/budget.js
+

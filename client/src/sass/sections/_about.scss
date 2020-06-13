@@ -1,0 +1,22 @@
+.about__image {
+	border: 1px solid #fff;
+	padding: 2px;
+	margin: 20px;
+	max-width: 300px;
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 16px;
+}
+.about__image_wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+#about {
+  padding-top: 0;
+  background-color: $gray-bg;
+}

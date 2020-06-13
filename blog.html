@@ -11,44 +11,42 @@
 
   <link rel="shortcut icon" href="src/images/favicon.png" type="image/png">
 
+  <!-- bootstrap -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+  <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Varela+Round" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Abel|Catamaran|Josefin+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400" rel="stylesheet"> 
 
 </head>
-
 <body>
 
   <nav  id="home" class="nav navbar-default navbar-fixed-top" role="navigation">
-   <div class="container">
-    <div class="navbar-header">
-      <div id="menuToggle" class="container-button" type="button"
-      class="navbar-toggle collapsed" data-toggle="collapse"
-      data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
+    <div class="container">
+      <div class="navbar-header">
+        <div id="menuToggle" class="container-button" type="button"
+          class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <a class="navbar-brand" href="index.html#home"><i class="fa fa-code" aria-hidden="true"></i></a>
+      </div>
+      <div  id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a  href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <!--<li><a target="_blank" href="../resume.pdf">Resume</a></li>-->
+        </ul>
+      </div>
     </div>
-    <!-- </button> -->
-    <a class="navbar-brand" href="index.html#home"><i class="fa fa-code" aria-hidden="true"></i></a>
-  </div>
-  <div  id="navbar" class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-      <li><a  href="index.html#about">About</a></li>
-      <li><a href="index.html#projects">Projects</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="./blog.html">Blog</a></li>
-      <!--<li><a target="_blank" href="../resume.pdf">Resume</a></li>-->
-    </ul>
-  </div>
-</div>
-</nav>
-
+  </nav>
   <!-- Content Section -->
-
   <section class="blog">
     <div class="jumbotron_image__blog-header">
       <!-- <img class="img-responsive" src="dist/images/blog_header.JPEG" alt="blog" /> -->
@@ -96,6 +94,7 @@
             </section>
         </div>
       </div>
+      </div>
     </div>
   </section>
 
@@ -138,6 +137,8 @@
                 <label for="message_content" class="col-xs-4 col-md-4 control-label">Message</label>
                 <div class="input-group">
                   <textarea name="message_content" cols="10" rows="6" placeholder="Message" class="form-control" type="text"></textarea>
+
+
 
 
                 </div>

@@ -1,0 +1,20 @@
+/* Main SCSS File  */
+
+// Base
+@import "util/variables";
+// Components
+@import "sections/mystyles";
+// google map
+@import "sections/map";
+// hero section
+@import "sections/hero";
+// main slider section
+@import "sections/mainSlider";
+// about section
+@import "sections/about";
+// navbar section
+@import "sections/navbar";
+// quote modal section 
+@import "sections/quote_modal";
+// blog section 
+@import "sections/blog";

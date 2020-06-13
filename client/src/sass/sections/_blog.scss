@@ -1,0 +1,83 @@
+.blog {
+	padding: 50px 0 0;
+	.page-header {
+		text-align: center;
+	}
+}
+
+.blog_links a {
+	color: #337ab7!important;
+}
+
+.blog_links {
+	padding: 40px 0;
+}
+.blog_text {
+  font-family: 'Josefin Sans', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+.jumbotron_image__blog-header {
+background: url(../../images/blog_matrix.jpg);
+background-position: top center;
+background-repeat:  no-repeat;
+background-attachment: fixed;
+background-size:  cover;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+height: 200px;
+padding-bottom: 50px;
+}
+.jumbotron_image__redux-saga {
+height: 200px;
+width: 100%;
+padding-top: 50px;
+img {
+  margin: 0 auto;
+  display: block;
+  width: 600px;
+  height: auto;
+}
+}
+.jumbotron_image__logo {
+height: auto;
+width: 100%;
+padding-top: 50px;
+img {
+  margin: 0 auto;
+  display: block;
+  width: 600px;
+  height: auto;
+}
+}
+.float_right {
+float: right;
+}
+.plain_link {
+color: #337ab7!important;
+cursor: pointer;
+}
+
+.plain_link:hover {
+text-decoration: underline;
+}
+
+.center-image {
+margin: 20px auto;
+}
+.caption-center {
+text-align: center;
+margin-top: -16px;
+font-size: 14px;
+}
+.horizontal-space-md {
+width: 100%;
+height:60px;
+padding:2px;
+@media (max-width: 767px) {
+    height: 30px;
+}
+}
