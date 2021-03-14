@@ -18,15 +18,6 @@ __objectives__
 
 ## Saturday 2021-03-13
 
-**todo:**
-
-- build a guided meditation chat bot
-- look at love ai for script for Q and A session ideas
-- deploy it
-- add voice in and out put
-- research face 3D model animation
-- research ML for facial recognition
-
 **accomplished:**
 
 - bot tutorials:
