@@ -51,3 +51,56 @@
     -ms-filter: blur(2px);
     filter: blur(2px);
 }
+
+
+.devlog {
+  padding: 50px 0 0;
+  .page-header {
+      text-align: center;
+  }
+}
+.devlog,
+.devlog p {
+  font-family: Open Sans;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+.devlog_text {
+  a:active,
+  a:hover,
+  a:link,
+  a:visited {
+      text-decoration: underline;
+      color: #337ab7;
+  }
+}
+.devlog__img {
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+}
+.devlog__description {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.jumbotron_image__devlog-header {
+  background: url(../images/home/code_bg.JPG);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  height: 200px;
+  padding-bottom: 50px;
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+
+  filter: blur(4px);
+}

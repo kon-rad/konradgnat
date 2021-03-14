@@ -3,8 +3,9 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from django.http import HttpResponse
 from django.template import loader
-
 from django.views import generic 
+from django.shortcuts import render
+import os
 
 from .models import Post
 from .models import Room
@@ -41,6 +42,22 @@ class ProjectsList(generic.ListView):
 class ProjectDetail(generic.DetailView):
     model = Project
     template_name = 'projects/project_detail.html'
+
+# class Devlog():
+def devlog(request):
+    template_name = 'devlog.html'
+    context = {}
+    return render(request, template_name, context=context)
+
+def devlogAzureAiHackathon(request):
+    template_name = 'devlogDetail.html'
+    markdowntext = open(os.path.join(os.path.dirname(__file__), 'markdown/azure_ai_hackathon_2021.md')).read()
+
+    context = {}
+    context['markdowntext'] = markdowntext
+
+    return render(request, template_name, context=context)
+
 
 # TODO: create project templates
 

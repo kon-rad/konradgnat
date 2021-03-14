@@ -25,7 +25,7 @@ TEMPLATE_DIRS = (os.path.join(BASE_DIR,'templates'),)
 SECRET_KEY = 'r5#th8)05d-vl@tvf5oz(@)fu6l_$@qaek&1j3^5@b6bm)n=kx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['konradgnat.com', '.konradgnat.com', '167.99.165.201', 'localhost', '127.0.0.1']
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'taggit',
+    'markdownify.apps.MarkdownifyConfig',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,34 @@ TEMPLATES = [
         },
     },
 ]
+
+MARKDOWNIFY = {
+    "default": {
+        "WHITELIST_TAGS": [
+            'a',
+            'abbr',
+            'acronym',
+            'b',
+            'blockquote',
+            'em',
+            'i',
+            'li',
+            'ol',
+            'p',
+            'strong',
+            'ul',
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+            'h7',
+            'span',
+            'hr',
+        ]
+    }
+}
 
 WSGI_APPLICATION = 'konradgnat.wsgi.application'
 
@@ -139,5 +168,5 @@ STATICFILES_DIRS = (
 # don't put any files there, they're put there automatically
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-# since we’re working full localhost, we’ll disable the CORS feature
+# since we're working full localhost, we'll disable the CORS feature
 CORS_ORIGIN_ALLOW_ALL = True
