@@ -13,7 +13,14 @@
 __objectives__
 
 - create a basic guided meditation bot with bot framework composer and host it
-- Add ability to 
+- Add speech capability
+
+# Saturday 2021-03-20
+
+**accomplished**
+- followed tutorial on (adding speech capability)[https://jamiemaguire.net/index.php/2020/09/05/adding-speech-capability-to-your-chatbot-using-bot-framework-and-azure-speech-services/]
+- figured out needed to download the Bot Framework Composer Emulator desktop app to run the emulator
+- hit a (bug)[https://github.com/microsoft/BotFramework-Composer/issues/5393] where couldn't publish bot to azure without a work or school account
 
 * * *
 
