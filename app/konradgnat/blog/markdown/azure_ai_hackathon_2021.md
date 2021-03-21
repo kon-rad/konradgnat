@@ -6,6 +6,18 @@
 * * *
 
 
+## week 2 
+
+*2021-03-20*
+
+__objectives__
+
+- create a basic guided meditation bot with bot framework composer and host it
+- Add ability to 
+
+* * *
+
+## Saturday 2021-03-13
 ## week 1 
 
 *2021-03-14*
