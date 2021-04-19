@@ -303,6 +303,8 @@ a {
     display: block;
     position: relative;
     float: left;
+    border-radius: 20px;
+    overflow: hidden;
 }
 .portfolio-item .imgWrap {
     position: absolute;
