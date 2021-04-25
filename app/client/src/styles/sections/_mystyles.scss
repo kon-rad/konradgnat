@@ -295,16 +295,20 @@ a {
 .portfolio-wrapper ul {
     list-style: none;
     padding-left: 0px;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 40px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .portfolio-item {
-    margin-left: 25%;
-    margin-bottom: 20px;
-    width: 50%;
+    margin: 20px 10px;
+    width: 500px;
+    height: 450px;
     display: block;
-    position: relative;
-    float: left;
     border-radius: 20px;
     overflow: hidden;
+    position: relative;
 }
 .portfolio-item .imgWrap {
     position: absolute;
@@ -378,6 +382,55 @@ u {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
 }
+.project__tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 12px;
+}
+.project__tag {
+    padding: 4px 12px 1px;
+    border: 1px solid #f3a712ff;
+    background-color: #f3a712ff;
+    border-radius: 20px;
+    margin: 4px 12px;
+    color: black;
+    font-size: 12px;
+    font-family: Josefin Sans,sans-serif;
+}
+.project__tag.inactive {
+    background-color: $gray-bg;
+    border-color: black;
+}
+
+/* Tags feature */
+.tags__wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .project__tag:hover {
+        cursor: pointer;
+    }
+}
+.tags__filter_section {
+    margin: 10px 50px;
+}
+.tags__options {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    margin: 8px 0 12px;
+    font-family: Josefin Sans,sans-serif;
+}
+.tags__select_all:hover, .tags__clear_all:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.tags__clear_all {
+    margin-right: 12px;
+}
 
 /* Media Quaries */
 
@@ -406,10 +459,6 @@ u {
     .textContent {
         font-size: 16px;
     }
-    .portfolio-wrapper ul li.portfolio-item {
-        width: 75%;
-        margin-left: 12.5%;
-    }
     .input-group {
         width: 100%;
     }
@@ -417,7 +466,18 @@ u {
         max-height: 700px;
     }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
+    .portfolio-wrapper ul {
+        margin: 10px 10px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .portfolio-wrapper ul {
+        margin: 10px 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
     .container-button {
         display: none;
     }
@@ -425,8 +485,5 @@ u {
 @media only screen and (min-width: 992px) {
     .portfolio-item {
         max-width: 500px;
-        margin: 0 auto 20px auto !important;
-        clear: both;
-        float: none !important;
     }
 }

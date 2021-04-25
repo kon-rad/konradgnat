@@ -1,12 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-
 module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, '..', 'konradgnat', 'static'),
-        publicPath: '../konradgnat/static/'
+        path: path.resolve(__dirname, '..', 'konradgnat', 'static_files'),
+        publicPath: '../konradgnat/static_files/'
     },
     module: {
         rules: [
