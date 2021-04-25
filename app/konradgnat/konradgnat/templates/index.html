@@ -50,126 +50,52 @@
         <h2 id="projects-title">Projects</h2>
       </div>
     </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="tags__filter_section">
+          <h3>Tags:</h3>
+          <div class="tags__options">
+            <div class="tags__clear_all">Hide All</div>
+            <div class="tags__select_all">Show All</div>
+          </div>
+          <div class="tags__wrapper">
+            {% for tag in projectTags %}
+            <div class="project__tag" data-tag="{{ tag }}">
+              {{ tag }}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="portfolio-wrapper">
-    <!-- Project #1 -->
     <ul>
-      <li class="portfolio-item" onclick="">
-        <div class="imgWrap">
-          <div class="imgDescription">
-            <h2>Tank Battalion</h2>
-            <p>A 2D game built from scratch with vanilla JavaScript and the canvas element. It includes
-              a single player and live multi player modes. Play it at the link below!</br>
-              Node, Express, Jade, Hosted on Digital Ocean</p> </br>
-            <p><a target="_blank" href="http://tankbattalion.gnonous.com" class="button">Live Site</a> | <a
-                target="_blank" href="https://github.com/kon-rad/tank-battalion" class="button">See the Code</a></p>
+
+      {% for project in projects %}
+
+        <li class="portfolio-item" onclick="" data-all-tags="{{ project.allTagSlugs }}">
+          <div class="imgWrap">
+            <div class="imgDescription">
+              <h2>{{ project.title }}</h2>
+              <p>{{ project.preview }}</p> </br>
+              <p><a target="_blank" href="{{ project.live_link }}" class="button">Live Site</a> | <a
+                  target="_blank" href="{{ project.github_link }}" class="button">GitHub</a></p>
+                  <div class="project__tags">
+                    {% for tag in project.tags.names %}
+                      <div class="project__tag"  data-project-tag="{{ tag }}">
+                        {{ tag }}
+                      </div>
+                    {% endfor %}
+                  </div>
+            </div>
           </div>
-        </div>
-        <img data-webp="{% static 'images/webp/tank.webp' %}" src="{% static 'images/tank.png' %}" alt=""
-          class="img-responsive">
-      </li>
-      <li class="portfolio-item" onclick="">
-        <div class="imgWrap">
-          <div class="imgDescription">
-            <h2>Reads Planet A NodeJS, React, MongoDB App</h2>
-            <p>Features user sign in, create, edit, delete posts and comments. Follow users and edit profile. Passport
-              library for
-              authentication and EJS templating engine. Data on books is received from Google Books
-              API.</br>
-              Node, Express, React, Flow, Enzyme, MongoDB</p> </br>
-            <p><a target="_blank" href="http://readsplanet.gnonous.com/" class="button">Visit Page</a> | <a
-                target="_blank" href="https://github.com/kon-rad/readbooks" class="button">Github</a></p>
-          </div>
-        </div>
-        <img data-webp="{% static 'images/webp/read-books.webp' %}" src="{% static 'images/read-books.png' %}" alt=""
-          class="img-responsive">
-      </li>
-      <li class="portfolio-item" onclick="">
-        <div class="imgWrap">
-          <div class="imgDescription">
-            <h2>Coherent Breathing App</h2>
-            <p>Practice coherent breathing technique</p>
-            <ul>
-              <li>Node</li>
-              <li>React</li>
-              <li>Redux</li>
-              <li>Express</li>
-              <li>PassportJS</li>
-              <li>Deployed to Digital Ocean</li>
-            </ul>
-            </br>
-            <p>
-              <a target="_blank" href="http://coherentbreathing.gnonous.com/" class="button">Live Site</a> | <a
-                target="_blank" href="https://github.com/kon-rad/coherentBreathingApp" class="button">See the Code</a>
-            </p>
-          </div>
-        </div>
-        <img data-webp="{% static 'images/webp/coherentBreathing.webp' %}"
-          src="{% static 'images/coherentBreathing.png' %}" alt="" class="img-responsive">
-      </li>
-      <li class="portfolio-item" onclick="">
-        <div class="imgWrap">
-          <div class="imgDescription">
-            <h2>YouTube to MP3 Converter</h2>
-            <p>Download MP3 file of YouTube videos, specify playback rate from 0.5 to 2.0. Built from scratch, no CRA,
-              webpack configured from scratch</p>
-            <ul>
-              <li>Node</li>
-              <li>Express</li>
-              <li>React</li>
-              <li>Webpack</li>
-              <li>Deployed to Digital Ocean</li>
-            </ul>
-            </br>
-            <p><a target="_blank" href="http://addmp3.gnonous.com" class="button"><span>Live Site</span></a> | <a
-                target="_blank" href="https://github.com/kon-rad/addMP3.fun" class="button">See the Code</a></p>
-          </div>
-        </div>
-        <img data-webp="{% static 'images/webp/addmp3.webp' %}" src="{% static 'images/addmp3.png' %}" alt=""
-          class="img-responsive">
-      </li>
-      <li class="portfolio-item" onclick="">
-        <div class="imgWrap">
-          <div class="imgDescription">
-            <h2>GifNotes</h2>
-            <p>A winning submission completed at GIF Hack 2017 in Palo Alto. Creates a gif from a
-              specified segment of video from a YouTube URL.</br>
-              Node, Express, jQuery, JavaScript, HTML5, CSS3</p> </br>
-            <a target="_blank" href="https://secret-tundra-36331.herokuapp.com/" class="button">Live Site</a>
-            <a target="_blank" href="https://github.com/kon-rad/GIFHack2017" class="button">Github</a>
-          </div>
-        </div>
-        <img data-webp="{% static 'images/webp/gifnotes.webp' %}" src="{% static 'images/gifnotes.png' %}" alt=""
-          class="project-img img-responsive">
-      </li>
-      <li class="portfolio-item" onclick="">
-        <div class="imgWrap">
-          <div class="imgDescription">
-            <h2>Crypto Prices</h2>
-            <p>This is a simple app that shows latest crypto currency prices.
-              This could have been built with just a front end, but it was an interesting exercise in developing with
-              Django</br>
-              Django, React, Coinbase API. It is hosted on a digital ocean droplet with an Nginx server.</p> </br>
-            <a target="_blank" href="http://cryptoprices.gnonous.com/" class="button">Live Site</a> |
-            <a target="_blank" href="https://github.com/kon-rad/cryptoPrices.Space" class="button">Github</a>
-          </div>
-        </div>
-        <img data-webp="{% static 'images/webp/cryptoprices.webp' %}" src="{% static 'images/cryptoprices.png' %}"
-          alt="" class="project-img img-responsive">
-      </li>
-      <li class="portfolio-item" onclick="">
-        <div class="imgWrap">
-          <div class="imgDescription">
-            <h2>MatchUpGame</h2>
-            <p>React app. Hosted on Digital ocean with nodejs back end.</br>
-              React, Node</p> </br>
-            <a target="_blank" href="http://matchupgame.gnonous.com/" class="button">Live Site</a> |
-            <a target="_blank" href="https://github.com/kon-rad/matchupgame" class="button">Github</a>
-          </div>
-        </div>
-        <img data-webp="{% static 'images/webp/matchupgame.webp' %}" src="{% static 'images/matchupgame.png' %}" alt=""
-          class="project-img img-responsive">
-      </li>
+          <img src="/static/images/projects/{{ project.image_url1 }}" alt=""
+            class="img-responsive">
+        </li>
+
+      {% endfor %}
+
     </ul>
   </div>
   <div class="additional-projects-conatiner">

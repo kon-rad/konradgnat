@@ -17,8 +17,20 @@ from .serializers import *
 def home(request):
     template_name = 'index.html'
     template = loader.get_template('index.html')
+    projects = Project.objects.order_by('priority_order')
+    projectTags = {}
+    for project in projects:
+        allTagSlugs = []
+        for name in project.tags.names():
+            projectTags[name] = name
+            allTagSlugs.append(name)
+        setattr(project, 'allTagSlugs', ','.join(allTagSlugs))
+
     context = {}
+    context['projects'] = projects
+    context['projectTags'] = projectTags.keys()
     return HttpResponse(template.render(context, request))
+
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'blog.html'
@@ -36,8 +48,8 @@ class BookDetail(generic.DetailView):
     template_name = 'books/book_detail.html'
 
 class ProjectsList(generic.ListView):
-    queryset = Project.objects.filter(status=1).order_by('-built_on')
-    template_name = 'projects.html'
+    queryset = Project.objects.filter(status=1).order_by('-completed_on')
+    template_name = 'projects/projects.html'
 
 class ProjectDetail(generic.DetailView):
     model = Project
