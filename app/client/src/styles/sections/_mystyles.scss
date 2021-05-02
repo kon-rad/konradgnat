@@ -323,6 +323,10 @@ a {
     transition: visibility, opacity 1s;
     -webkit-transition: visibility, opacity 1s;
 }
+.portfolio__item_image {
+    margin: 0 auto;
+    height: 100%;
+}
 .portfolio-item:hover,
 .portfolio-item:focus,
 .portfolio-item:active {

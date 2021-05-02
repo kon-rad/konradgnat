@@ -79,8 +79,17 @@
             <div class="imgDescription">
               <h2>{{ project.title }}</h2>
               <p>{{ project.preview }}</p> </br>
-              <p><a target="_blank" href="{{ project.live_link }}" class="button">Live Site</a> | <a
-                  target="_blank" href="{{ project.github_link }}" class="button">GitHub</a></p>
+              <p>
+                {% if project.live_link %}
+                  <a target="_blank" href="{{ project.live_link }}" class="button">Live Site</a> | 
+                {% endif %}
+                {% if project.live_link and project.github_link %}
+                   | 
+                {% endif %}
+                {% if project.github_link %}
+                <a target="_blank" href="{{ project.github_link }}" class="button">GitHub</a>
+                {% endif %}
+              </p>
                   <div class="project__tags">
                     {% for tag in project.tags.names %}
                       <div class="project__tag"  data-project-tag="{{ tag }}">
@@ -91,7 +100,7 @@
             </div>
           </div>
           <img src="/static/images/projects/{{ project.image_url1 }}" alt=""
-            class="img-responsive">
+            class="img-responsive portfolio__item_image">
         </li>
 
       {% endfor %}
@@ -102,9 +111,6 @@
     <h3>Client Projects</h3>
     <p>Corporate Kneads:
       <a class="link--blue" href="https://corporatekneads.com/">live site</a>
-    </p>
-    <p>Nashville Drum Tracks:
-      <a class="link--blue" href="http://nashvilledrumtracks.com">live site</a>
     </p>
   </div>
   <div class="additional-projects-conatiner">
