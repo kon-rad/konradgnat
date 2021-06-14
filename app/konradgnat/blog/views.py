@@ -70,6 +70,11 @@ def devlogAzureAiHackathon(request):
 
     return render(request, template_name, context=context)
 
+def dataviz(request):
+    template = request.GET.get('page', None)
+    template_name = "dataviz/" + template + ".html"
+
+    return render(request, template_name)
 
 # TODO: create project templates
 

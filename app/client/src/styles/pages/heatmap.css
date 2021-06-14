@@ -1,0 +1,65 @@
+:root {
+  /* CSS HEX */
+  /* https://coolors.co/114b5f-028090-e4fde1-456990-f45b69 */
+  /* CSS HEX */
+  --midnight-green-eagle-green: #114b5fff;
+  --metallic-seaweed: #028090ff;
+  --nyanza: #e4fde1ff;
+  --queen-blue: #456990ff;
+  --fiery-rose: #f45b69ff;
+  }
+  
+  .heading h1 {
+    font-size: 36px;
+    font-family: arial;
+    text-align: center;
+  }
+  .dataviz__container {
+    margin-top: 80px;
+    padding: 80px 120px 180px;
+  }
+  .description {
+    font-size: 20px;
+    font-family: arial;
+    text-align: center;
+  }
+  .svg_container {
+    position: relative;
+    overflow-x: scroll;
+  }
+  .data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dataviz__tooltip {
+    height: 80px;
+    width: 150px;
+    padding: 8px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border: solid 1px white;
+    border-radius: 5px;
+    background-color: var(--queen-blue);
+    color: white;
+    z-index: 99999999999;
+    display: none;
+  }
+  .dataviz__tooltip a {
+    text-decoration: underline;
+    color: blue;
+    display: inline-block;
+  }
+  .legendText {
+    font-size: 12px;
+    font-family: arial;
+  }
+  .cell {
+    cursor: pointer;
+  }
