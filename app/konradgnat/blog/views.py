@@ -76,6 +76,12 @@ def dataviz(request):
 
     return render(request, template_name)
 
+def codebits(request):
+    template_name = 'codebits.html'
+    context = {}
+    return render(request, template_name, context=context)
+
+
 # TODO: create project templates
 
 # TODO: create a React front end for a chat room

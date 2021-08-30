@@ -5,3 +5,4 @@ import './scripts/modules/hamburgerMenu';
 import './scripts/modules/mainSlider';
 import './scripts/modules/projectTags';
 import './scripts/modules/quotes';
+import './scripts/modules/codebits';
