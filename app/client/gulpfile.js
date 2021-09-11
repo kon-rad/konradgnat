@@ -14,9 +14,7 @@ const uglifyJs = require('gulp-uglify');
 const { series } = require('gulp');
 
 gulp.task('copyPdf', (done) => {
-    gulp.src('./src/pdf/*').pipe(
-        gulp.dest('../konradgnat/static_files/images/pdf/')
-    );
+    gulp.src('./src/pdf/*').pipe(gulp.dest('../konradgnat/static_files/pdf/'));
     done();
 });
 gulp.task('babel', (done) => {
