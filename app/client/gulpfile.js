@@ -13,6 +13,12 @@ const babel = require('gulp-babel');
 const uglifyJs = require('gulp-uglify');
 const { series } = require('gulp');
 
+gulp.task('copyPdf', (done) => {
+    gulp.src('./src/pdf/*').pipe(
+        gulp.dest('../konradgnat/static_files/images/pdf/')
+    );
+    done();
+});
 gulp.task('babel', (done) => {
     gulp.src('./src/scripts/pages/*')
         .pipe(
@@ -91,7 +97,7 @@ gulp.task(
 
 gulp.task(
     'build',
-    series('css', 'imagemin', 'babel', function (done) {
+    series('css', 'imagemin', 'babel', 'copyPdf', function (done) {
         done();
     })
 );
