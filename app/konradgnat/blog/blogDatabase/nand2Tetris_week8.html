@@ -3,7 +3,7 @@
 </h3>
 <br />
 <br />
-<strong>Unit 2.4: Function Call and Return: Implementation Preview</strong>
+<h3>Unit 2.4: Function Call and Return: Implementation Preview</h3>
 <ul>
   <li>We create state when we run a function</li>
   <li>We have to save the state and return to it when calling a new function</li>
@@ -29,21 +29,59 @@
 <div class="blog__image">
   <img src="../static/images/blog/notes/week_8_3.png" alt="">
 </div>
-<strong>Unit 2.5: Function Call and Return: Run-time Simulation</strong>
+<h3>Unit 2.5: Function Call and Return: Run-time Simulation</h3>
 <ul>
 <li>example of calling factorial of 3, run time simulation</li>
 </ul>
 <div class="blog__image">
   <img src="../static/images/blog/notes/week_8_4.png" alt="">
 </div>
-<strong>
+<h3>
   Unit 2.6: Function Call and Return Implementation
-</strong>
+</h3>
 <ul>
-  <li></li>
+  <li>Handling call:</li>
+  <ul>
+    <li> push returnAddress (using a label)</li>
+    <li>push LCL, ARG, THIS, THAT // save of the caller</li>
+    <li>ARG = SP - 5 - nArgs // Reposition ARG</li>
+    <li>LCL = SP // Reposition LCL</li>
+    <li>goto functionName // Transfers control to the called function</li>
+    <li>(returnAddress) // Declare a label for the return-address</li>
+  </ul>
 </ul>
+<div class="blog__image">
+  <img src="../static/images/blog/notes/week_8_5.png" alt="">
+</div>
+<div class="blog__image">
+  <img src="../static/images/blog/notes/week_8_6.png" alt="">
+</div>
 <br />
-<strong>Lecture Slides</strong>
+<h3>
+  Unit 2.7: VM Implementation on the Hack Platform
+</h3>
+<ul>
+  <li>VM programming convention: One file must be named Main.vm, with one function named main</li>
+  <li>Bootstrap code: SP=256, Call Sys.init</li>
+  <li>Special symbols</li>
+</ul>
+<div class="blog__image">
+  <img src="../static/images/blog/notes/week_8_7.png" alt="">
+</div>
+<h3>
+  Unit 2.8: VM Translator: Proposed Implementation
+</h3>
+<div class="blog__image">
+  <img src="../static/images/blog/notes/week_8_8.png" alt="">
+</div>
+<div class="blog__image">
+  <img src="../static/images/blog/notes/week_8_9.png" alt="">
+</div>
+<div class="blog__image">
+  <img src="../static/images/blog/notes/week_8_10.png" alt="">
+</div>
+<br />
+<h3>Lecture Slides</h3>
 <br />
 <embed
     src="https://konradgnat.com/static/pdf/nand2Tetris_chapter_8_slides.pdf"
@@ -53,7 +91,9 @@
     height="900px"
     width="100%"
 ></embed>
-<strong>Chapter 8 from the course book</strong>
+<br />
+<h3>Chapter 8 from the course book</h3>
+<br />
 <embed
     src="https://konradgnat.com/static/pdf/nand2Tetris_chapter_8.pdf"
     type="application/pdf"
