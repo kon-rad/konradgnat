@@ -9,6 +9,24 @@
   <li>We have to save the state and return to it when calling a new function</li>
   <li>When the function returns, we recycle the state</li>
   <li>The Calling pattern is LIFO, Last In First Out</li>
+  <li>1. VM Implementation: the function says: call foo nArgs</li>
+  <ul>
+    <ol>Sets arg</ol>
+    <ol>Saves the caller's frame</ol>
+    <ol>Jumps to execute foo</ol>
+  </ul>
+</ul>
+<li>2. The called function is entered:</li>
+<ul>
+  <ol>Sets up the local segment of the called function</ol>
+</ul>
+<li>3. Return</li>
+<ul>
+  <ol>Copies the return value onto argument 0</ol>
+  <ol>Restores the segment pointers of the caller</ol>
+  <ol>Clears the stack</ol>
+  <ol>Sets SP for the caller</ol>
+  <ol>Jumps to the return address within the caller's code</ol>
 </ul>
 <div class="blog__image">
   <img src="../static/images/blog/notes/week_8_1.png" alt="">
@@ -28,6 +46,14 @@
 </div>
 <div class="blog__image">
   <img src="../static/images/blog/notes/week_8_3.png" alt="">
+</div>
+<ul>
+  <li>
+    The global stack - it contains the 'working stack of the caller', and the function 'block' of the callee, which includes: the saved frame of the caller, local stack, and working stack of the callee.
+  </li>
+</ul>
+<div class="blog__image">
+  <img src="../static/images/blog/notes/week_8_11.png" alt="">
 </div>
 <h3>Unit 2.5: Function Call and Return: Run-time Simulation</h3>
 <ul>
