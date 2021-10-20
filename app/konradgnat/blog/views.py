@@ -81,6 +81,11 @@ def codebits(request):
     context = {}
     return render(request, template_name, context=context)
 
+def now(request):
+    template_name = 'now.html'
+    context = {}
+    return render(request, template_name, context=context)
+
 
 # TODO: create project templates
 
