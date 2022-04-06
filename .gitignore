@@ -8,3 +8,6 @@ static
 static_files
 **/*/secret.py
 pyvenv.cfg
+
+.Python
+lib

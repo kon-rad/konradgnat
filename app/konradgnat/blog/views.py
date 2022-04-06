@@ -14,6 +14,8 @@ from .models import Book
 from .models import Project
 from .serializers import *
 
+from .now import Now
+
 def home(request):
     template_name = 'index.html'
     template = loader.get_template('index.html')
@@ -83,7 +85,11 @@ def codebits(request):
 
 def now(request):
     template_name = 'now.html'
-    context = {}
+    data = Now.getData()
+    print(data)
+    context = {
+        "now_list": data
+    }
     return render(request, template_name, context=context)
 
 
