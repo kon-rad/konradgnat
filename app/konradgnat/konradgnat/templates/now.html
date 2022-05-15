@@ -22,9 +22,9 @@
             <div class="card mb-4">
               <div class="card-body">
                 <h2 class="card-title">{{ item.title }}</h2>
-                <p class="card-text text-muted h6 blog__date">{{ item.now_date|date:'m-d-Y' }} </p>
+                <p class="card-text text-muted h6 blog__date">{{ item.date|date:'m-d-Y' }} </p>
                 <ul>
-                  {% for now_item in now_list %}
+                  {% for now_item in item.list %}
                     <li>{{ now_item }}</li>
                   {% endfor %}
                 </ul>
