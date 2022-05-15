@@ -111,3 +111,17 @@ class Project(models.Model):
     live_link = models.CharField(max_length=600, default=None, blank=True, null=True)
     other_link = models.CharField(max_length=600, default=None, blank=True, null=True)
     other_link_title = models.CharField(max_length=600, default=None, blank=True, null=True)
+
+
+class Now(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    now_date = models.DateTimeField(null=True, blank=True)
+    created_on = models.DateTimeField(auto_now= True)
+    content = models.TextField()
+    status = models.IntegerField(choices=STATUS, default=0)
+
+    class Meta:
+        ordering = ['-now_date']
+
+    def __str__(self):
+        return self.title

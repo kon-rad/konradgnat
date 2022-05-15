@@ -14,4 +14,6 @@ urlpatterns = [
     path('devlog/azure_ai/', views.devlogAzureAiHackathon, name='azure_ai'),
     path('codebits', views.codebits, name='codebits'),
     path('now', views.now, name='now'),
+    path('now', views.NowList.as_view(), name='now'),
+    path('now/<slug:slug>/', views.BookDetail.as_view(), name='book_detail'),
 ]

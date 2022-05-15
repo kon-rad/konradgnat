@@ -92,6 +92,14 @@ def now(request):
     }
     return render(request, template_name, context=context)
 
+class NowList(generic.ListView):
+    queryset = Book.objects.filter(status=1).order_by('-read_on')
+    template_name = 'now.html'
+
+class NowDetail(generic.DetailView):
+    model = Now
+    template_name = 'books/now_detail.html'
+
 
 # TODO: create project templates
 
