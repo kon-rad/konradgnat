@@ -17,7 +17,6 @@ from .serializers import *
 from .now import Now
 
 def home(request):
-    template_name = 'index.html'
     template = loader.get_template('index.html')
     projects = Project.objects.order_by('priority_order')
     projectTags = {}
