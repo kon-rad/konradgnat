@@ -1,9 +1,9 @@
 
 .books {
   padding: 50px 0 0;
-  .page-header {
-      text-align: center;
-  }
+}
+.books .page-header {
+  text-align: center;
 }
 .books,
 .books p {
@@ -13,14 +13,12 @@
   letter-spacing: 0px;
   font-weight: 400;
 }
-.books_text {
-  a:active,
-  a:hover,
-  a:link,
-  a:visited {
-      text-decoration: underline;
-      color: #337ab7;
-  }
+.books_text a:active, 
+  .books_text a:hover,
+  .books_text a:link,
+  .books_text a:visited {
+    text-decoration: underline;
+    color: #337ab7;
 }
 .books__img {
   width: 200px;
@@ -33,31 +31,31 @@
   margin-bottom: 60px;
 }
 .jumbotron_image__books-header {
-    background: url(../images/books/books_header_bg.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+  background: url(../images/books/books_header_bg.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: initial;
-    background-size: cover;
-    height: 200px;
-    padding-bottom: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: initial;
+  background-size: cover;
+  height: 200px;
+  padding-bottom: 50px;
 
-    -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(2px);
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
 }
 
 
 .devlog {
   padding: 50px 0 0;
-  .page-header {
-      text-align: center;
-  }
+}
+.devlog .page-header {
+  text-align: center;
 }
 .devlog,
 .devlog p {
@@ -67,14 +65,12 @@
   letter-spacing: 0px;
   font-weight: 400;
 }
-.devlog_text {
-  a:active,
-  a:hover,
-  a:link,
-  a:visited {
-      text-decoration: underline;
-      color: #337ab7;
-  }
+.devlog_text a:active,
+  .devlog_text a:hover,
+  .devlog_text a:link,
+  .devlog_text a:visited {
+    text-decoration: underline;
+    color: #337ab7;
 }
 .devlog__img {
   width: 200px;

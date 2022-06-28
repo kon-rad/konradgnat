@@ -19,7 +19,7 @@
 
 #about {
   padding-top: 0;
-  background-color: $gray-bg;
+  background-color: var(--gray-bg);
 }
 
 .font-normal {
