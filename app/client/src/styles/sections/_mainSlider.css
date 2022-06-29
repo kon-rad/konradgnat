@@ -84,7 +84,7 @@ body {
 }
 .swiper-slide--main:nth-child(1) {
     /* // background: url(../images/mainSlider1.JPG) center center no-repeat; */
-    background: url(../images/coding.gif) center center no-repeat;
+    background: url(../../images/coding.gif) center center no-repeat;
     background-size: cover;
 }
 .swiper-slide--main:nth-child(1) .mainSlider__inner_wrapper {

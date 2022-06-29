@@ -31,7 +31,7 @@
   margin-bottom: 60px;
 }
 .jumbotron_image__books-header {
-  background: url(../images/books/books_header_bg.jpg);
+  background: url(../../images/books/books_header_bg.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -83,7 +83,7 @@
   margin-bottom: 60px;
 }
 .jumbotron_image__devlog-header {
-  background: url(../images/home/code_bg.jpg);
+  background: url(../../images/home/code_bg.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

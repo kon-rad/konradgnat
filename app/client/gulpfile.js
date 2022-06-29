@@ -10,7 +10,8 @@ const mozjpeg = require('imagemin-mozjpeg');
 const webp = require('gulp-webp');
 const babel = require('gulp-babel');
 const uglifyJs = require('gulp-uglify');
-const { series } = require('gulp');
+const { series } = require('gulp')
+const concat = require('gulp-concat');
 
 gulp.task('copyPdf', (done) => {
     gulp.src('./src/pdf/*').pipe(gulp.dest('../konradgnat/static_files/pdf/'));
@@ -29,7 +30,7 @@ gulp.task('babel', (done) => {
 });
 
 gulp.task('css', function (done) {
-    gulp.src('./src/styles/**/*.scss')
+    gulp.src('./src/styles/**/*.css')
         .pipe(sourcemaps.init())
         .pipe(
             autoprefixer({
@@ -38,7 +39,8 @@ gulp.task('css', function (done) {
         )
         .pipe(cssnano())
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('../konradgnat/static_files/css/'));
+        // .pipe(concat('main.css'))
+        .pipe(gulp.dest('../konradgnat/static_files/css'));
     gulp.src('./src/styles/vendors/*').pipe(
         gulp.dest('../konradgnat/static_files/css/')
     );
@@ -80,7 +82,7 @@ gulp.task(
     'default',
     series('css', 'babel', function (done) {
         gulp.watch(
-            ['src/styles/**/*.scss', 'src/styles/pages/*'],
+            ['src/styles/**/*.css', 'src/styles/pages/*'],
             series('css')
         );
         gulp.watch(
