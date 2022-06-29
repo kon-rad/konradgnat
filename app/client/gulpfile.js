@@ -1,7 +1,6 @@
 'use strict';
 
 const gulp = require('gulp');
-const sass = require('gulp-sass');
 const cssnano = require('gulp-cssnano');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
@@ -32,7 +31,6 @@ gulp.task('babel', (done) => {
 gulp.task('css', function (done) {
     gulp.src('./src/styles/**/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
         .pipe(
             autoprefixer({
                 cascade: false

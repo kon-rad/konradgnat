@@ -1,5 +1,5 @@
 #website_wrapper {
-    // visibility: hidden;
+    /* // visibility: hidden; */
 }
 
 .modal__content {
@@ -8,9 +8,6 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-    @media (max-width: 768px) {
-        min-height: 300px;
-    }
 }
 
 .modal__close {
@@ -18,12 +15,9 @@
     color: #aaa;
     float: right;
     font-size: 19px;
-    &:hover {
-        cursor: pointer;
-    }
-    @media (max-width: 768px) {
-        font-size: 13px;
-    }
+}
+.modal__close:hover {
+    cursor: pointer;
 }
 .modal__new_quote,
 .modal__copy_quote {
@@ -33,13 +27,10 @@
     padding: 0px 4px;
     border-radius: 4px;
     color: #e5e9eb;
-
-    &:hover {
-        cursor: pointer;
-    }
-    @media (max-width: 768px) {
-        font-size: 13px;
-    }
+}
+.modal__new_quote:hover,
+.modal__copy_quote:hover {
+    cursor: pointer;
 }
 .modal__copy_quote {
     margin-left: 12px;
@@ -54,17 +45,11 @@
 .modal__quote {
     font-family: Josefin Sans, sans-serif;
     font-size: 22px;
-    @media (max-width: 768px) {
-        font-size: 17px;
-    }
 }
 
 .modal__author {
     font-family: arial;
     font-size: 22px;
-    @media (max-width: 768px) {
-        font-size: 14px;
-    }
 }
 
 .close:hover,
@@ -73,3 +58,27 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+    .modal__content {
+        min-height: 300px;
+    }
+    .modal__quote {
+        font-size: 17px;
+    }
+    .modal__author {
+        font-size: 14px;
+    }
+    .modal__new_quote,
+    .modal__copy_quote {
+            font-size: 13px;
+    }
+    .modal__close {
+        font-size: 13px;
+    }
+
+    .modal__content {
+        min-height: 300px;
+    }
+}
+
