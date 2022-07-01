@@ -61,18 +61,23 @@
           </div>
           <a class="navbar-brand" href="{% url 'home' %}"><i class="fa fa-code" aria-hidden="true"></i></a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="{% url 'home' %}#about">About</a></li>
-            <li><a href="{% url 'home' %}#projects">Projects</a></li>
-            <!-- <li><a href="{% url 'home' %}#contact">Contact</a></li> -->
-            <li><a href="{% url 'blog' %}">Blog</a></li>
-            <li><a href="{% url 'books' %}">Bookshelf</a></li>
-            <!-- <li><a href="{% url 'codebits' %}">generative art</a></li> -->
-            <li><a href="{% url 'now' %}">now</a></li>
-            <!-- <li><a href="{% url 'devlog' %}">devlog</a></li> -->
-            <li><a target="_blank" href="/static/pdf/resume.pdf">Resume</a></li>
-          </ul>
+        <div class="toolbar-wrapper">
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="{% url 'home' %}#about">About</a></li>
+              <li><a href="{% url 'home' %}#projects">Projects</a></li>
+              <!-- <li><a href="{% url 'home' %}#contact">Contact</a></li> -->
+              <li><a href="{% url 'blog' %}">Blog</a></li>
+              <li><a href="{% url 'books' %}">Bookshelf</a></li>
+              <!-- <li><a href="{% url 'codebits' %}">generative art</a></li> -->
+              <li><a href="{% url 'now' %}">now</a></li>
+              <!-- <li><a href="{% url 'devlog' %}">devlog</a></li> -->
+              <li><a target="_blank" href="/static/pdf/resume.pdf">Resume</a></li>
+            </ul>
+          </div>
+          <div class="wallet-button-wrapper">
+            <button id="wallet-button" class="wallet-button">connect <img class="metamask-logo" src="/static/images/logos/metamask.png"/></button>
+          </div>
         </div>
       </div>
     </nav>

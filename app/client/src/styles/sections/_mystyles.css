@@ -434,6 +434,18 @@ u {
 .tags__clear_all {
     margin-right: 12px;
 }
+.toolbar-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.wallet-button-wrapper {
+    padding: 10px 15px;
+}
+.metamask-logo {
+    height: 24px;
+}
+
 
 /* Media Quaries */
 

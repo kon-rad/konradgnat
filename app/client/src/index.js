@@ -6,3 +6,5 @@ import './scripts/modules/mainSlider';
 import './scripts/modules/projectTags';
 import './scripts/modules/quotes';
 import './scripts/modules/codebits';
+import './scripts/modules/web3Connection';
+console.log("new one");
