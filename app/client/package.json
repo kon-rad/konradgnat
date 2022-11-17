@@ -55,7 +55,7 @@
         "gulp-webp": "^4.0.1",
         "imagemin-mozjpeg": "^8.0.0",
         "imagemin-pngquant": "^8.0.0",
-        "resolve-url-loader": "^3.1.0",
+        "resolve-url-loader": "^5.0.0",
         "semver": "^7.3.7",
         "style-loader": "^0.23.1",
         "webpack": "^4.35.3",
