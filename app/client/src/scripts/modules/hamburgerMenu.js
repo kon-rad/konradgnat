@@ -12,9 +12,6 @@ const toggleMenu = () => {
 };
 
 $(document).ready(() => {
-
-    console.log("hamburger ");
-
     const button = document.getElementById('menuToggle');
     if (button) {
         button.addEventListener('click', toggleMenu);

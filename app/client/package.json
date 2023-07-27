@@ -65,7 +65,6 @@
         "@babel/plugin-transform-runtime": "^7.5.0",
         "@babel/runtime": "^7.5.4",
         "babel-loader": "^8.2.2",
-        "jquery": "^3.4.1",
-        "web3": "^1.7.4"
+        "jquery": "^3.4.1"
     }
 }
