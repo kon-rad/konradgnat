@@ -1,4 +1,5 @@
 import Footer from './Footer';
+import Nav from './Nav';
 
 const Layout = ({ children }) => {
   const headerLinks = [
@@ -33,15 +34,7 @@ const Layout = ({ children }) => {
   ];
   return (
     <div className="layout">
-      <div className="header">
-        {headerLinks.map((item: any) => {
-          return (
-            <div className="header__link">
-              <a href={item.url}>{item.title}</a>
-            </div>
-          );
-        })}
-      </div>
+      <Nav />
       <div className="layout__content">{children}</div>
       <Footer />
     </div>

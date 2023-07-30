@@ -6,7 +6,8 @@ import Head from 'next/head';
 import {
   getDefaultWallets,
   RainbowKitProvider,
-} from '@rainbow-me/rainbowkit';
+} from '@rainbow-me/rainbowkit'; // 1. import `ChakraProvider` component
+import { ChakraProvider } from '@chakra-ui/react';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import {
   mainnet,
@@ -46,28 +47,30 @@ const App: React.FC<AppProps> = ({
   pageProps,
 }: AppProps) => {
   return (
-    <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains}>
-        <Head>
-          <link
-            rel="preconnect"
-            href="https://fonts.googleapis.com"
-          />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin=""
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </RainbowKitProvider>
-    </WagmiConfig>
+    <ChakraProvider>
+      <WagmiConfig config={wagmiConfig}>
+        <RainbowKitProvider chains={chains}>
+          <Head>
+            <link
+              rel="preconnect"
+              href="https://fonts.googleapis.com"
+            />
+            <link
+              rel="preconnect"
+              href="https://fonts.gstatic.com"
+              crossOrigin=""
+            />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
+              rel="stylesheet"
+            />
+          </Head>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </RainbowKitProvider>
+      </WagmiConfig>
+    </ChakraProvider>
   );
 };
 export default App;

@@ -10,8 +10,12 @@
 
 body {
   margin: 0;
-  background: var(--floral-white);
-  font-family: 'Source Code Pro', monospace;
+  background: var(--floral-white)!important;
+  font-family: 'Source Code Pro', monospace!important;
+}
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .layout__content {
   padding: 20px 30px;
@@ -49,10 +53,14 @@ body {
 }
 .home__top {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  marign-bottom: 40px;
+  margin-bottom: 40px;
+  height: 200px;
+}
+svg {
+  display: inline;
 }
 .home__title {
   text-align: center;
@@ -87,4 +95,15 @@ body {
 }
 .links__item {
   margin: 20px;
+}
+@media (max-width: 780px) {
+  .home__content {
+    flex-direction: column;
+  }
+  .home__left {
+    width: 100%;
+  }
+  .home__right {
+    width: 100%;
+  }
 }

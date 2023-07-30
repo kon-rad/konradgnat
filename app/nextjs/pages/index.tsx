@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import useSWR from 'swr';
-import PersonComponent from '../components/Person';
 import type { Person } from '../interfaces';
 import '@rainbow-me/rainbowkit/styles.css';
 import { Tilt } from 'react-tilt';
