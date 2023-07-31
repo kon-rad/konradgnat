@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="footer__content">
         <a
           href="https://github.com/kon-rad/konradgnat"
-          target="__blank"
+          target="_blank"
         >
           source code
         </a>

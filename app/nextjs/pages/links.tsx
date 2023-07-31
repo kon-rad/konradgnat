@@ -8,7 +8,7 @@ export default function LinksPage() {
         {Links.map((item: any) => {
           return (
             <div className="links__item">
-              <a href={item.url}>
+              <a href={item.url} target="_blank">
                 {item.icon} {item.title}{' '}
               </a>
             </div>
