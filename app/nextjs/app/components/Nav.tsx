@@ -1,9 +1,10 @@
+'use client';
+
 import {
   Box,
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
@@ -11,8 +12,6 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react';
 import {
@@ -22,9 +21,26 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons';
 import React from 'react';
+import { useState, useEffect } from 'react';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 export default function Nav() {
   const { isOpen, onToggle } = useDisclosure();
+  const supabase = createClientComponentClient();
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      async () => checkUser(),
+    );
+    checkUser();
+    return () => {
+      authListener?.subscription.unsubscribe();
+    };
+  }, []);
+  async function checkUser() {
+    const user = supabase.auth.getUser();
+    setUser(user);
+  }
 
   return (
     <Box>
@@ -97,7 +113,6 @@ const DesktopNav = () => {
               <PopoverContent
                 border={0}
                 boxShadow={'xl'}
-                bg={popoverContentBgColor}
                 p={4}
                 rounded={'xl'}
                 minW={'sm'}

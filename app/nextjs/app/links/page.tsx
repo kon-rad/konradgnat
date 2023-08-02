@@ -1,4 +1,6 @@
-import Links from '../utils/links';
+'use client';
+
+import Links from '../../utils/links';
 
 export default function LinksPage() {
   return (

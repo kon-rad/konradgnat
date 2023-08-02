@@ -1,4 +1,4 @@
-import Links from '../utils/links';
+import Links from '../../utils/links';
 
 const Footer = () => {
   return (

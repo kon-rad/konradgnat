@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /* CSS HEX */
   /* https://coolors.co/palette/227c9d-17c3b2-ffcb77-fef9ef-fe6d73 */
@@ -32,6 +36,9 @@ h3 {
   display: flex;
   min-height: 100vh;
   flex-direction: row;
+}
+.home__textSection {
+  margin-bottom: 18px;
 }
 .home__left {
   width: 50%;

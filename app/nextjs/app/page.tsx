@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import useSWR from 'swr';
-import type { Person } from '../interfaces';
+'use client';
 import '@rainbow-me/rainbowkit/styles.css';
 import { Tilt } from 'react-tilt';
 import { TypeAnimation } from 'react-type-animation';
@@ -16,22 +14,12 @@ const defaultOptions = {
   reset: true, // If the tilt effect has to be reset on exit.
   easing: 'cubic-bezier(.03,.98,.52,.99)', // Easing on enter/exit.
 };
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Index() {
-  const { data, error, isLoading } = useSWR<Person[]>(
-    '/api/people',
-    fetcher,
-  );
-
-  if (error) return <div>Failed to load</div>;
-  if (isLoading) return <div>Loading...</div>;
-  if (!data) return null;
-
   return (
     <div className="home">
       <div className="home__top">
-        <h1 className="home__title">Konrad Gnat Portfolio</h1>
+        <h1 className="home__title"> Konrad Gnat Portfolio</h1>
         <TypeAnimation
           sequence={[
             'Frontend Developer',
@@ -75,8 +63,8 @@ export default function Index() {
             Among my greatest intellectual hero's are Buckminster
             Fuller, John Muir, Leonardo Da Vinci, John Steinbeck and
             Kahlil Gibran. On any given day I can be found coding
-            applications. When not coding, I enjoy reading, running
-            and zen meditation.
+            applications. When not coding, I enjoy reading, martial
+            arts and zen meditation.
           </p>
           <div>
             <div className="home__textSection">

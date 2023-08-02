@@ -1,8 +1,8 @@
+'use client';
+
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { AppProps } from 'next/app';
 import '@rainbow-me/rainbowkit/styles.css';
-import Head from 'next/head';
 import {
   getDefaultWallets,
   RainbowKitProvider,
@@ -19,8 +19,10 @@ import {
 } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import '../index.css';
-import Layout from '../components/Layout';
+import Layout from './components/Layout';
+import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs';
+import { SessionContextProvider } from '@supabase/auth-helpers-react';
+import { useState } from 'react';
 
 const { chains, publicClient } = configureChains(
   [mainnet, polygon, optimism, arbitrum, sepolia, goerli],
@@ -42,35 +44,26 @@ const wagmiConfig = createConfig({
   publicClient,
 });
 
-const App: React.FC<AppProps> = ({
-  Component,
-  pageProps,
-}: AppProps) => {
-  return (
-    <ChakraProvider>
-      <WagmiConfig config={wagmiConfig}>
-        <RainbowKitProvider chains={chains}>
-          <Head>
-            <link
-              rel="preconnect"
-              href="https://fonts.googleapis.com"
-            />
-            <link
-              rel="preconnect"
-              href="https://fonts.gstatic.com"
-              crossOrigin=""
-            />
-            <link
-              href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
-              rel="stylesheet"
-            />
-          </Head>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </RainbowKitProvider>
-      </WagmiConfig>
-    </ChakraProvider>
-  );
+export const metadata = {
+  title: 'Konrad Gnat Portfolio',
+  description: 'Web Developer',
 };
-export default App;
+
+export default function Provider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [supabaseClient] = useState(() => createPagesBrowserClient());
+  return (
+    <SessionContextProvider supabaseClient={supabaseClient}>
+      <ChakraProvider>
+        <WagmiConfig config={wagmiConfig}>
+          <RainbowKitProvider chains={chains}>
+            <Layout>{children}</Layout>
+          </RainbowKitProvider>
+        </WagmiConfig>
+      </ChakraProvider>
+    </SessionContextProvider>
+  );
+}
