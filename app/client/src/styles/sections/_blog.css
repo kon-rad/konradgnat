@@ -5,15 +5,14 @@
     text-align: center;
 }
 .blog,
-.blog p {
+.blog p, .blog_text p {
     font-family: Open Sans;
     font-size: 17px;
     line-height: 24px;
     letter-spacing: 0px;
     font-weight: 400;
 }
-.blog_text,
-    .blog_text a:active,
+.blog_text a:active,
     .blog_text a:hover,
     .blog_text a:link,
     .blog_text a:visited {
