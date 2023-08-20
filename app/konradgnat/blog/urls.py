@@ -1,12 +1,17 @@
 from . import views
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'blog', views.PostList, 'blog')
+router.register(r'books', views.BooksList, 'books')
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('blog', views.PostList.as_view(), name='blog'),
+    # path('blog', views.PostList.as_view(), name='blog'),
     path('dataviz/', views.dataviz, name='dataviz'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
-    path('books', views.BooksList.as_view(), name='books'),
+    # path('books', views.BooksList.as_view(), name='books'),
     path('books/<slug:slug>/', views.BookDetail.as_view(), name='book_detail'),
     path('projects', views.ProjectsList.as_view(), name='projects'),
     path('projects/<slug:slug>/', views.ProjectDetail.as_view(), name='project_detail'),
@@ -16,4 +21,6 @@ urlpatterns = [
     path('now', views.now, name='now'),
     path('now', views.NowList.as_view(), name='now'),
     path('now/<slug:slug>/', views.BookDetail.as_view(), name='book_detail'),
+    # serialized JSON api routes
+    path('api/', include(router.urls)),
 ]

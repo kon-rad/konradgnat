@@ -2,8 +2,11 @@ from rest_framework import serializers
 from .models import Post
 from .models import Room
 from .models import Book
+from taggit_serializer.serializers import (TagListSerializerField,
+                                           TaggitSerializer)
 
-class PostSerializer(serializers.ModelSerializer):
+class PostSerializer(TaggitSerializer, serializers.ModelSerializer):
+    tags = TagListSerializerField()
 
     class Meta:
         model = Post 
@@ -15,8 +18,8 @@ class RoomSerializer(serializers.ModelSerializer):
         model = Room 
         fields = ('room_name', 'get_messages', 'get_users')
 
-
 class BookSerializer(serializers.ModelSerializer):
+    tags = TagListSerializerField()
 
     class Meta:
         model = Book 
@@ -35,3 +38,6 @@ class BookSerializer(serializers.ModelSerializer):
             'status',
             'book_format',
         )
+
+    def get_tags(self, obj):
+        return obj.tags.names()

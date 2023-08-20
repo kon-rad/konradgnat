@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     'quotesApi',
     'rest_framework',
     'corsheaders',
-    'taggit',
     'markdownify.apps.MarkdownifyConfig',
+    'taggit',
+    'taggit_serializer',
 ]
 
 MIDDLEWARE = [
@@ -170,3 +171,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # since we're working full localhost, we'll disable the CORS feature
 CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',  # Assuming your React app is running on this address
+    "http://127.0.0.1:3000",
+    "http://konradgnat.com",
+    "https://konradgnat.com",
+    "http://www.konradgnat.com",
+    "https://www.konradgnat.com"
+]

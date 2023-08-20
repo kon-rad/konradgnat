@@ -27,14 +27,14 @@ import { useState } from 'react';
 const { chains, publicClient } = configureChains(
   [mainnet, polygon, optimism, arbitrum, sepolia, goerli],
   [
-    alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_ID }),
+    alchemyProvider({ apiKey: process.env.REACT_APP_ALCHEMY_ID }),
     publicProvider(),
   ],
 );
 
 const { connectors } = getDefaultWallets({
   appName: 'Konrad Gnat Portfolio',
-  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_ID,
+  projectId: process.env.REACT_APP_WALLET_CONNECT_ID,
   chains,
 });
 

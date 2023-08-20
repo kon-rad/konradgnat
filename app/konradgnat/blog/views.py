@@ -1,10 +1,12 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
+from rest_framework import viewsets
 from django.http import HttpResponse
 from django.template import loader
 from django.views import generic 
 from django.shortcuts import render
+
 import os
 
 from .models import Post
@@ -13,6 +15,8 @@ from .models import Message
 from .models import Book
 from .models import Project
 from .serializers import *
+
+from .serializers import PostSerializer
 
 from .now import Now
 
@@ -32,17 +36,20 @@ def home(request):
     context['projectTags'] = projectTags.keys()
     return HttpResponse(template.render(context, request))
 
-class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'blog.html'
+class PostList(viewsets.ModelViewSet):
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+
+class BooksList(viewsets.ModelViewSet):
+    serializer_class = BookSerializer
+    queryset = Book.objects.all()
+    # queryset = Book.objects.filter(status=1).order_by('-read_on')
+    # template_name = 'books.html'
+
 
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'post_detail.html'
-
-class BooksList(generic.ListView):
-    queryset = Book.objects.filter(status=1).order_by('-read_on')
-    template_name = 'books.html'
 
 class BookDetail(generic.DetailView):
     model = Book
