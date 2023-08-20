@@ -27,7 +27,7 @@ SECRET_KEY = 'r5#th8)05d-vl@tvf5oz(@)fu6l_$@qaek&1j3^5@b6bm)n=kx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['konradgnat.com', '.konradgnat.com', '167.99.165.201', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['konradgnat.com', '.konradgnat.com', '157.230.36.177', 'localhost', '127.0.0.1']
 
 
 # Application definition
