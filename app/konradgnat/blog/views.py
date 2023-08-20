@@ -20,21 +20,31 @@ from .serializers import PostSerializer
 
 from .now import Now
 
-def home(request):
-    template = loader.get_template('index.html')
-    projects = Project.objects.order_by('priority_order')
-    projectTags = {}
-    for project in projects:
-        allTagSlugs = []
-        for name in project.tags.names():
-            projectTags[name] = name
-            allTagSlugs.append(name)
-        setattr(project, 'allTagSlugs', ','.join(allTagSlugs))
+from django.shortcuts import render
 
-    context = {}
-    context['projects'] = projects
-    context['projectTags'] = projectTags.keys()
-    return HttpResponse(template.render(context, request))
+from django.views.generic import TemplateView
+
+catchall = TemplateView.as_view(template_name='index.html')
+
+def index(request):
+    print("hello world views.py")
+    return render(request, 'build/index.html')
+
+# def home(request):
+#     template = loader.get_template('index.html')
+#     projects = Project.objects.order_by('priority_order')
+#     projectTags = {}
+#     for project in projects:
+#         allTagSlugs = []
+#         for name in project.tags.names():
+#             projectTags[name] = name
+#             allTagSlugs.append(name)
+#         setattr(project, 'allTagSlugs', ','.join(allTagSlugs))
+
+#     context = {}
+#     context['projects'] = projects
+#     context['projectTags'] = projectTags.keys()
+#     return HttpResponse(template.render(context, request))
 
 class PostList(viewsets.ModelViewSet):
     serializer_class = PostSerializer
@@ -43,8 +53,6 @@ class PostList(viewsets.ModelViewSet):
 class BooksList(viewsets.ModelViewSet):
     serializer_class = BookSerializer
     queryset = Book.objects.all()
-    # queryset = Book.objects.filter(status=1).order_by('-read_on')
-    # template_name = 'books.html'
 
 
 class PostDetail(generic.DetailView):
@@ -98,70 +106,11 @@ def now(request):
     }
     return render(request, template_name, context=context)
 
-class NowList(generic.ListView):
-    queryset = Book.objects.filter(status=1).order_by('-read_on')
-    template_name = 'now.html'
+# class NowList(generic.ListView):
+#     queryset = Book.objects.filter(status=1).order_by('-read_on')
+#     template_name = 'now.html'
 
-class NowDetail(generic.DetailView):
-    model = Now
-    template_name = 'books/now_detail.html'
-
-
-# TODO: create project templates
-
-# TODO: create a React front end for a chat room
-# TODO: consider if this is a good idea, might prefer to scrap this chat room project
-
-# @api_view(['GET', 'POST'])
-# def post_list(request):
-#     if request.method == 'GET':
-#         data = Post.objects.all()
-
-#         serializer = PostSerializer(data, context={'request': request}, many=True)
-
-#         return Response(serializer.data)
-
-#     elif request.method == 'POST':
-#         serializer = PostSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(status=status.HTTP_201_CREATED)
-            
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-# @api_view(['PUT', 'DELETE'])
-# def post_detail(request, pk):
-#     try:
-#         post = Post.objects.get(pk=pk)
-#     except Post.DoesNotExist:
-#         return Response(status=status.HTTP_404_NOT_FOUND)
-
-#     if request.method == 'PUT':
-#         serializer = PostSerializer(post, data=request.data,context={'request': request})
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(status=status.HTTP_204_NO_CONTENT)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-#     elif request.method == 'DELETE':
-#         post.delete()
-#         return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-# @api_view(['GET', 'POST'])
-# def room_list(request):
-#     if request.method == 'GET':
-#         data = Room.objects.all()
-
-#         serializer = RoomSerializer(data, context={'request': request}, many=True)
-
-#         return Response(serializer.data)
-
-#     elif request.method == 'POST':
-#         serializer = RoomSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(status=status.HTTP_201_CREATED)
-            
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+# class NowDetail(generic.DetailView):
+#     model = Now
+#     template_name = 'books/now_detail.html'
 
