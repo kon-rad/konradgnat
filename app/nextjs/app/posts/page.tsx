@@ -19,23 +19,32 @@ export default function Home() {
     data && setPosts(data);
     setLoading(false);
   }
-
-  return (
-    <div className="flex justify-center">
-      {loading && (
+  const renderHeading = () => {
+    if (loading) {
+      return (
         <h1 className="text-3xl font-semibold tracking-wide mt-6 mb-2">
           loading ...
         </h1>
-      )}
-      {!loading && !posts.length && (
+      );
+    } else if (!posts.length) {
+      return (
         <h1 className="text-3xl font-semibold tracking-wide mt-6 mb-2">
           No posts.
         </h1>
-      )}
-      <div className="max-w-prose">
+      );
+    } else {
+      return (
         <h1 className="text-3xl font-semibold tracking-wide mt-6 mb-2">
           Posts
         </h1>
+      );
+    }
+  };
+
+  return (
+    <div className="flex justify-center">
+      <div className="max-w-prose">
+        {renderHeading()}
         {posts.map((post) => (
           <Link key={post.id} href={`/posts/${post.id}`}>
             <div className="cursor-pointer border-b border-gray-300	mt-8 pb-4">
