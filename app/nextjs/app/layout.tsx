@@ -7,6 +7,8 @@ import Provider from './provider';
 import './global.css';
 import './index.css';
 
+export const dynamic = 'force-dynamic';
+
 export default function RootLayout({
   children,
 }: {
