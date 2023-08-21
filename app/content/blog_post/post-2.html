@@ -1,0 +1,50 @@
+<div class="jumbotron_image__logo">
+  <img class="img-responsive"
+    src="https://res.cloudinary.com/dvozfehww/image/upload/v1692612562/konradgnat/images/jest.png" alt="jest" />
+</div>
+<p>Jest is a testing framework maintained by Facebook to test React apps. </p>
+
+<h3>Install and Configure</h3>
+<code>$ yarn add —dev jest</code>
+
+<p>If you started your app with create-react-app boilerplate a lot of the configuration will already exist. To start
+  testing all you need to do is run npm test.</p>
+<p>The file that you are testing should reside in a file that has the same name with .test.js ending.
+  This file should reside in mirror directory structure vis a vi it’s counterpart. </p>
+<p>Import the file at the top of the page. Typically you would create a wrapper ''describe'' function for the main piece
+  of code being tested with nested ''describe'' statements for each smaller sub feature.
+  Each feature is tested with a ''it'' function, the first parameter is a string describing this feature and giving it a
+  title. The next parameter is a function holding the main test logic.
+  Each assertion is tested with expect(some code here).toEqual(what it should equal)</p>
+<p>Here''s an example.</p>
+<pre>
+          <code>
+            describe(''Name of what''s being tested, () => {
+
+                  describe(''name of function tested'', () => {
+
+                      it(''description of path being tested'', () => {
+
+                          /* code logic here */
+
+                          expect(
+                              /* some function input */
+                          ).toEqual(
+                              /* expected function output */
+                          )
+                      });
+                  });
+              });
+          </code>
+        </pre>
+
+<p>Learn more at the official Jest tutorial, link below.</p>
+
+<section class="blog_links">
+  <h3>Links</h3>
+  <div class="well well-lg">
+    <p>
+      <a href="https://facebook.github.io/jest/docs/en/tutorial-react.html">Official tutorial</a>
+    </p>
+  </div>
+</section>

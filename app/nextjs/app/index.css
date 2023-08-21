@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   /* CSS HEX */
@@ -54,10 +51,8 @@ h3 {
 .home__avatar {
   width: 200px;
   border-radius: 50%;
-};
-.home__title {
-  color: red;
 }
+
 .home__top {
   display: flex;
   justify-content: flex-start;
@@ -113,4 +108,20 @@ svg {
   .home__right {
     width: 100%;
   }
+}
+.blog_post__content img {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.blog_post__content p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.blog_post__content a {
+  text-decoration: underline;
+  color: rgb(0, 0, 116);
+}
+.blog_post__content h3 {
+  font-size: 22px;
+  font-weight: 700;
 }

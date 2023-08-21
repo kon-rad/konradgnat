@@ -1,7 +1,7 @@
 'use client';
-import '@rainbow-me/rainbowkit/styles.css';
 import { Tilt } from 'react-tilt';
 import { TypeAnimation } from 'react-type-animation';
+import Image from 'next/image';
 
 const defaultOptions = {
   reverse: false, // reverse the tilt direction
@@ -84,6 +84,13 @@ export default function Index() {
             </p>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center my-12">
+        <img
+          alt="coding late night"
+          className="max-w-md rounded-xl"
+          src="https://res.cloudinary.com/dvozfehww/image/upload/v1692612567/konradgnat/images/home/man_and_machine.jpg"
+        />
       </div>
     </div>
   );

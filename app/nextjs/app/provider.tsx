@@ -2,7 +2,6 @@
 
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import '@rainbow-me/rainbowkit/styles.css';
 import {
   getDefaultWallets,
   RainbowKitProvider,

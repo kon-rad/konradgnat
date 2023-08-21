@@ -11,3 +11,6 @@ pyvenv.cfg
 
 .Python
 lib
+
+.env
+build

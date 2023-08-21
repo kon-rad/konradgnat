@@ -4,9 +4,13 @@ import {
   BsLinkedin,
   BsTwitter,
   BsYoutube,
+  BsDiscord,
+  BsMedium,
+  BsFillCalendarCheckFill,
 } from 'react-icons/bs';
 import { SiSubstack } from 'react-icons/si';
-import { FaEthereum } from 'react-icons/fa';
+import { FaCoffee, FaEthereum } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 const Links = [
   {
@@ -31,7 +35,7 @@ const Links = [
   },
   {
     url: 'https://www.youtube.com/channel/UCUIFdez2IItVFaDTJQyPywg/videos',
-    title: 'YouTube',
+    title: 'YouTube - Drone Film Channel',
     icon: <BsYoutube />,
   },
   {
@@ -39,16 +43,41 @@ const Links = [
     title: 'Substack',
     icon: <SiSubstack />,
   },
-  // {
-  //   url: 'https://lenster.xyz/u/konrad',
-  //   title: 'Lens',
-  //   icon: 'Lens',
-  // },
-  // {
-  //   url: 'https://lenster.xyz/u/konrad',
-  //   title: 'Ethereum',
-  //   icon: <FaEthereum />,
-  // },
+  {
+    url: 'https://lenster.xyz/u/konrad',
+    title: 'Lens',
+    icon: <FaEthereum />,
+  },
+  {
+    url: 'https://medium.com/@konradmgnat',
+    title: 'Medium',
+    icon: <BsMedium />,
+  },
+  {
+    url: 'https://app.poap.xyz/scan/0xmaker.eth',
+    title: 'POAPs',
+    icon: <FaEthereum />,
+  },
+  {
+    url: 'https://discord.com/users/0xmaker.eth#7252',
+    title: 'Discord',
+    icon: <BsDiscord />,
+  },
+  {
+    url: 'https://ko-fi.com/0xmaker',
+    title: 'Buy me a Coffee',
+    icon: <FaCoffee />,
+  },
+  {
+    url: 'mailto:konradmgnat@gmail.com',
+    title: 'Email',
+    icon: <MdEmail />,
+  },
+  {
+    url: 'https://cal.com/konrad-gnat/30min',
+    title: "30 Minute Meeting - Let's catch up",
+    icon: <BsFillCalendarCheckFill />,
+  },
 ];
 
 export default Links;
