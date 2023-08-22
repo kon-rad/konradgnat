@@ -3,7 +3,6 @@ import React from 'react';
 import '@rainbow-me/rainbowkit/styles.css';
 import Head from 'next/head';
 import Provider from './provider';
-import { GoogleAnalytics } from 'nextjs-google-analytics';
 
 import './global.css';
 import './index.css';
@@ -28,7 +27,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
           rel="stylesheet"
         />
-        <GoogleAnalytics trackPageViews />
       </Head>
       <body>
         <Provider>{children}</Provider>

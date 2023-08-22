@@ -22,6 +22,7 @@ import Layout from './components/Layout';
 import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { useState } from 'react';
+import { GoogleAnalytics } from 'nextjs-google-analytics';
 
 const { chains, publicClient } = configureChains(
   [mainnet, polygon, optimism, arbitrum, sepolia, goerli],
@@ -59,7 +60,10 @@ export default function Provider({
       <ChakraProvider>
         <WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider chains={chains}>
-            <Layout>{children}</Layout>
+            <Layout>
+              <GoogleAnalytics trackPageViews />
+              {children}
+            </Layout>
           </RainbowKitProvider>
         </WagmiConfig>
       </ChakraProvider>

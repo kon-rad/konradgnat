@@ -85,12 +85,18 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center my-12">
-        <img
-          alt="coding late night"
-          className="max-w-md rounded-xl"
-          src="https://res.cloudinary.com/dvozfehww/image/upload/v1692612567/konradgnat/images/home/man_and_machine.jpg"
-        />
+      <div className="flex justify-center my-12 h-full">
+        <Tilt
+          options={defaultOptions}
+          style={{ height: 448, width: 448 }}
+          className=" my-12"
+        >
+          <img
+            alt="coding late night"
+            className="max-w-md rounded-xl my-12"
+            src="https://res.cloudinary.com/dvozfehww/image/upload/v1692612567/konradgnat/images/home/man_and_machine.jpg"
+          />
+        </Tilt>
       </div>
     </div>
   );
