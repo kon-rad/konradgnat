@@ -46,7 +46,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center content__container">
       <div className="max-w-prose">
         {renderHeading()}
         {posts.map((post: any) => {

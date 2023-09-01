@@ -1,6 +1,6 @@
 export default function Resume() {
   return (
-    <div>
+    <div className="content__container">
       <a href="/assets/resume.pdf" download="resume.pdf">
         {' '}
         Download Resume{' '}

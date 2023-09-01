@@ -23,6 +23,7 @@ import {
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import AudioPlayer from '@/lib/components/AudioPlayer';
 
 export default function Nav() {
   const { isOpen, onToggle } = useDisclosure();
@@ -127,6 +128,7 @@ const DesktopNav = () => {
           </Popover>
         </Box>
       ))}
+      <AudioPlayer />
     </Stack>
   );
 };

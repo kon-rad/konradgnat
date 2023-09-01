@@ -29,40 +29,54 @@
   <li> O(mn)</li>
 </ul>
 <pre>
-  <code>
-    function LCS(x, y) {
-      x = x.split('''');
-      y = y.split('''');
-      var lcs = [];
-      return LCS_calc(lcs, x, y);
-    }
-    function LCS_calc(lcs, x, y) {
-    
-    var i, j, m = x.length, n = y.length;
-    
-    for(i = 0; i < m+1; i++) {
-    
-    
-    for(j = 0; j < n+1; j++) {
-    if (j===0) {
-    lcs[i] = [];
+<code>
+  function LCS(x, y) {
+    x = x.split('''');
+    y = y.split('''');
+    var lcs = [];
+    return LCS_calc(lcs, x, y);
   }
-    if (i===0 || j===0) {
-      lcs[i][j] = 0;
+  function LCS_calc(lcs, x, y) {
+    var i, j, m = x.length, n = y.length;
+
+    for(i = 0; i < m+1; i++) {
+      for(j = 0; j < n+1; j++) {
+        if (j===0) {
+          lcs[i] = [];
+        }
+        if (i===0 || j===0) {
+          lcs[i][j] = 0;
         } else if (x[i-1] === y[j-1]) {
-              lcs[i][j] = lcs[i-1][j-1]+1;
-          } else {
-              lcs[i][j] = Math.max(lcs[i-1][j], lcs[i][j-1]);
-          }      }    }    return LCS_find(lcs, x, y, m, n);  }    function LCS_find(lcs, x, y, m, n) {    var current = lcs[m][n],
-            result = [];    while (current > 0 && m > 0 && n > 0) {      if (lcs[m][n-1] === lcs[m][n]-1 && lcs[m-1][n] === lcs[m][n]-1) {
-            m--;
-            n--;
-            current--;
-            result.unshift(x[m]);      } else if (lcs[m][n-1] === lcs[m][n] && lcs[m-1][n] === lcs[m][n] && lcs[m-1][n-1] === lcs[m][n]) {
-            m--;
-            n--;      } else if (lcs[m-1][n] === lcs[m][n]-1 && lcs[m][n-1] === lcs[m][n]) {
-            n--;      } else {
-            m--;      }    }    return result.join('''');  }  LCS( "132535365" , "123456789" );// => returns "12356"
-  </code>
+          lcs[i][j] = lcs[i-1][j-1]+1;
+        } else {
+          lcs[i][j] = Math.max(lcs[i-1][j], lcs[i][j-1]);
+        }      
+      }
+    }    
+    return LCS_find(lcs, x, y, m, n);  
+  }
+  function LCS_find(lcs, x, y, m, n) {
+    var current = lcs[m][n];
+    var result = [];   
+    while (current > 0 && m > 0 && n > 0) {
+      if (lcs[m][n-1] === lcs[m][n]-1 && lcs[m-1][n] === lcs[m][n]-1) {
+        m--;
+        n--;
+        current--;
+        result.unshift(x[m]);      
+      } else if (lcs[m][n-1] === lcs[m][n] && lcs[m-1][n] === lcs[m][n] && lcs[m-1][n-1] === lcs[m][n]) {
+        m--;
+        n--;      
+      } else if (lcs[m-1][n] === lcs[m][n]-1 && lcs[m][n-1] === lcs[m][n]) {
+        n--;      
+      } else {
+        m--;      
+      }    
+    }    
+    return result.join('''');  
+  }  
+  LCS( "132535365" , "123456789" );
+  // => returns "12356"
+</code>
 </pre>
 <div class="horizontal-space-md"></div>
