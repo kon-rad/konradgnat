@@ -1,0 +1,68 @@
+<p>This is a classic computer science problem. It is the basis of data comparison programs like the diff utility, and
+  for version control systems like Git. The idea is to find the longest subsequence to all the sequences, most often
+  involving only two. This is a problem that can be solved using dynamic programming. Dynamic programming is a method
+  for solving complex problems by breaking the problem down into smaller sub problems. Each sub problem is solved just
+  once, it’s solution is stored so that the next time the same subproblem occurs, instead of recomputing it’s solution,
+  it is returned from memory. This technique of storing solutions to sub problems to be retrieved later when needed is
+  called ‘memoization.’</p>
+<p>The naive solution for this problem would be to generate all possible
+  subsequences and find the longest matching subsequence. This solution is exponential in terms of time complexity.
+  Because this problem has the following two properties it can be approached with a dynamic programming technique. This
+  problem has an <u>optimal substructure</u>. This means that it can be broken down into smaller and simpler
+  subproblems. This problem also has <u>overlapping subproblems</u> which means that the sub problems repeat themselves.
+  These two properties make this problem solvable by a dynamic programming technique.</p>
+<p>The first property, the
+  optimal substructure, is that it is composed of repeating sub problems. Suppose that two strings end with the same
+  letter. Removing that letter and adding it to the resulting substring, you are left with two shorter strings. The
+  solution can be found by repeating this process on the shorter strings until there are no letters left. If the last
+  letters are not the same, the answer can be found by finding the max of either substring A with the last letter
+  removed compared with substring B or substring A compared with substring B with the last letter removed.</p>
+<p>
+  The second property, the overlapping subproblems, means that in the above described recursive method the same problem
+  is repeatedly solved. This recomputation can be avoided by either using memoization or tabulation. In this solution we
+  will use tabulation.</p>
+<p>The function LCS_calc() which creates the table of the length of the longest common
+  subsequence (LCS). The function LCS_find() goes through that table, retrieves and prints the LCS. </p>
+<p>Time
+  Complexity:</p>
+<ul>
+  <li> O(mn)</li>
+</ul>
+<pre>
+  <code>
+    function LCS(x, y) {
+      x = x.split('''');
+      y = y.split('''');
+      var lcs = [];
+      return LCS_calc(lcs, x, y);
+    }
+    function LCS_calc(lcs, x, y) {
+    
+    var i, j, m = x.length, n = y.length;
+    
+    for(i = 0; i < m+1; i++) {
+    
+    
+    for(j = 0; j < n+1; j++) {
+    if (j===0) {
+    lcs[i] = [];
+  }
+    if (i===0 || j===0) {
+      lcs[i][j] = 0;
+        } else if (x[i-1] === y[j-1]) {
+              lcs[i][j] = lcs[i-1][j-1]+1;
+          } else {
+              lcs[i][j] = Math.max(lcs[i-1][j], lcs[i][j-1]);
+          }      }    }    return LCS_find(lcs, x, y, m, n);  }    function LCS_find(lcs, x, y, m, n) {    var current = lcs[m][n],
+            result = [];    while (current > 0 && m > 0 && n > 0) {      if (lcs[m][n-1] === lcs[m][n]-1 && lcs[m-1][n] === lcs[m][n]-1) {
+            m--;
+            n--;
+            current--;
+            result.unshift(x[m]);      } else if (lcs[m][n-1] === lcs[m][n] && lcs[m-1][n] === lcs[m][n] && lcs[m-1][n-1] === lcs[m][n]) {
+            m--;
+            n--;      } else if (lcs[m-1][n] === lcs[m][n]-1 && lcs[m][n-1] === lcs[m][n]) {
+            n--;      } else {
+            m--;      }    }    return result.join('''');  }  LCS( "132535365" , "123456789" );// => returns "12356"
+  </code>
+</pre>
+<div class="horizontal-space-md"></div>

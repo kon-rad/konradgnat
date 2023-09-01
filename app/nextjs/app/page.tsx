@@ -69,7 +69,7 @@ export default function Index() {
           <div>
             <div className="home__textSection">
               <h3>Languages</h3>
-              <p>JavaScript, Python, PHP, SQL, Java, Swift, C#, C</p>
+              <p>JavaScript/TypeScript, Python, PHP, Solidity, SQL, Java, Swift, C#, C</p>
             </div>
           </div>
           <div className="home__textSection">

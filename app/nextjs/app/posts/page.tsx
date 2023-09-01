@@ -14,7 +14,11 @@ export default function Home() {
   }, [supabase]);
 
   async function fetchPosts() {
-    const { data, error } = await supabase.from('blog_post').select();
+    const { data, error } = await supabase
+      .from('blog_post')
+      .select()
+      .order('created_on', { ascending: false });
+
     console.log('posts data: ', data);
     data && setPosts(data);
     setLoading(false);
@@ -45,17 +49,24 @@ export default function Home() {
     <div className="flex justify-center">
       <div className="max-w-prose">
         {renderHeading()}
-        {posts.map((post) => (
-          <Link key={post.id} href={`/posts/${post.id}`}>
-            <div className="cursor-pointer border-b border-gray-300	mt-8 pb-4">
-              <h2 className="text-xl font-semibold">{post.title}</h2>
-              <p className="text-gray-500 mt-2">{post.preview}</p>
-              <p className="text-gray-500 mt-2">
-                on: {post.created_on}
-              </p>
-            </div>
-          </Link>
-        ))}
+        {posts.map((post: any) => {
+          const displayDate = new Date(post.created_on)
+            .toISOString()
+            .slice(0, 10);
+          return (
+            <Link key={post.id} href={`/posts/${post.id}`}>
+              <div className="cursor-pointer border-b border-gray-300	mt-8 pb-4">
+                <h2 className="text-xl font-semibold">
+                  {post.title}
+                </h2>
+                <p className="text-gray-500 mt-2">{post.preview}</p>
+                <p className="text-gray-500 mt-2">
+                  on: {displayDate}
+                </p>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

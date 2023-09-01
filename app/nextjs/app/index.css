@@ -7,6 +7,7 @@
   --sunset: #ffcb77ff;
   --floral-white: #fef9efff;
   --light-red: #fe6d73ff;
+  --text-white: white;
 }
 
 body {
@@ -59,7 +60,15 @@ h3 {
   align-items: center;
   flex-direction: column;
   margin-bottom: 40px;
-  height: 200px;
+  height: 100vh;
+  max-height: 900px;
+  color: var(--text-white);
+
+  background: url("/images/coding.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 svg {
   display: inline;
@@ -97,6 +106,9 @@ svg {
 }
 .links__item {
   margin: 20px;
+}
+.content__container {
+  padding: 30px 60px;
 }
 @media (max-width: 780px) {
   .home__content {
