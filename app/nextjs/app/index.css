@@ -20,7 +20,6 @@ h3 {
   margin-bottom: 10px;
 }
 .layout__content {
-  padding: 20px 30px;
   min-height: 100vh;
 }
 .header {
@@ -64,7 +63,7 @@ h3 {
   max-height: 900px;
   color: var(--text-white);
 
-  background: url("/images/coding.gif") no-repeat center center fixed; 
+  background: url("/images/coding.gif") no-repeat center center; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -77,6 +76,7 @@ svg {
   text-align: center;
   font-size: 28px;
   margin-bottom: 20px;
+  margin-top: 120px;
 }
 .home__textSection h3 {
   cursor: pointer;
