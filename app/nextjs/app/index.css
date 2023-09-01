@@ -110,6 +110,9 @@ svg {
 .content__container {
   padding: 30px 60px;
 }
+.audio__player {
+  height: 24px;
+}
 @media (max-width: 780px) {
   .home__content {
     flex-direction: column;
