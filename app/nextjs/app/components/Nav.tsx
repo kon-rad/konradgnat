@@ -190,6 +190,7 @@ const MobileNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
+      <AudioPlayer />
     </Stack>
   );
 };
