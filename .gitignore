@@ -10,7 +10,6 @@ static_files
 pyvenv.cfg
 
 .Python
-lib
 
 .env
 build
