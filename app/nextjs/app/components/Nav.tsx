@@ -8,7 +8,6 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -24,6 +23,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import AudioPlayer from '@/lib/components/AudioPlayer';
+import Link from 'next/link';
 
 export default function Nav() {
   const { isOpen, onToggle } = useDisclosure();
@@ -102,14 +102,12 @@ const DesktopNav = () => {
             <Popover trigger={'hover'} placement={'bottom-start'}>
               <PopoverTrigger>
                 <Link
-                  p={2}
+                  className="p-2"
                   href={navItem.href ?? '#'}
-                  fontSize={'sm'}
-                  fontWeight={500}
-                  color={linkColor}
-                  _hover={{
-                    textDecoration: 'none',
-                    color: linkHoverColor,
+                  style={{
+                    fontSize: 'sm',
+                    fontWeight: '500',
+                    color: linkColor,
                   }}
                 >
                   {navItem.label}
@@ -143,12 +141,13 @@ const DesktopNav = () => {
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
     <Link
-      href={href}
       role={'group'}
-      display={'block'}
-      p={2}
-      rounded={'md'}
-      _hover={{ bg: 'pink.50' }}
+      className="p-2"
+      href={href || '#'}
+      style={{
+        fontSize: '16',
+        fontWeight: '500',
+      }}
     >
       <Stack direction={'row'} align={'center'}>
         <Box>
@@ -239,7 +238,11 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <Link
+                key={child.label}
+                className="p-2"
+                href={child.href || '#'}
+              >
                 {child.label}
               </Link>
             ))}
