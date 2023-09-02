@@ -18,7 +18,6 @@ import {
 } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import Layout from './components/Layout';
 import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { useState } from 'react';
@@ -60,10 +59,8 @@ export default function Provider({
       <ChakraProvider>
         <WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider chains={chains}>
-            <Layout>
-              <GoogleAnalytics trackPageViews />
-              {children}
-            </Layout>
+            <GoogleAnalytics trackPageViews />
+            {children}
           </RainbowKitProvider>
         </WagmiConfig>
       </ChakraProvider>

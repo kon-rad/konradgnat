@@ -3,7 +3,8 @@ import React from 'react';
 import '@rainbow-me/rainbowkit/styles.css';
 import Head from 'next/head';
 import Provider from './provider';
-
+import Footer from './components/Footer';
+import Nav from './components/Nav';
 import './global.css';
 import './index.css';
 
@@ -14,6 +15,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  console.log('inside layout.tsx');
   return (
     <html lang="en">
       <Head>
@@ -49,7 +51,13 @@ export default function RootLayout({
         />
       </Head>
       <body>
-        <Provider>{children}</Provider>
+        <Provider>
+          <div className="layout">
+            <Nav />
+            <div className="layout__content">{children}</div>
+            <Footer />
+          </div>
+        </Provider>
       </body>
     </html>
   );

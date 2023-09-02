@@ -42,6 +42,7 @@ export default function Nav() {
     const user = supabase.auth.getUser();
     setUser(user);
   }
+  console.log('nav render');
 
   return (
     <Box>
@@ -76,7 +77,7 @@ export default function Nav() {
           <Flex
             display={{ base: 'none', md: 'flex' }}
             ml={10}
-            className=" w-100"
+            className=" w-full"
           >
             <DesktopNav />
           </Flex>
@@ -94,7 +95,7 @@ const DesktopNav = () => {
   const linkHoverColor = 'blue.800';
 
   return (
-    <div className="flex flex-row justify-between w-100">
+    <div className="flex flex-row justify-between w-full">
       <Stack direction={'row'} spacing={4}>
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
