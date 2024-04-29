@@ -85,7 +85,9 @@ svg {
   display: flex;
   padding: 20px 40px;
   align-items: center;
-  justify-content: center;;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 .footer__linkItem {
   margin-right: 20px;

@@ -15,7 +15,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  console.log('inside layout.tsx');
   return (
     <html lang="en">
       <Head>
