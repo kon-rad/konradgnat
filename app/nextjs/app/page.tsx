@@ -97,7 +97,7 @@ export default function Index() {
           <img
             alt="coding late night"
             className="max-w-md rounded-xl my-12"
-            src="public/images/man_and_machine.JPG"
+            src="images/man_and_machine.JPG"
           />
         </Tilt>
       </div>
