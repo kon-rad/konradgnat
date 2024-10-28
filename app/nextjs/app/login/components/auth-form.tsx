@@ -6,6 +6,8 @@ import { Database } from '../../database.types';
 
 export default function AuthForm() {
   const supabase = createClientComponentClient<Database>();
+  const redirectUrl = `${process.env.NEXT_PUBLIC_URL}/auth/callback`;
+
   return (
     <Auth
       supabaseClient={supabase}
@@ -14,7 +16,7 @@ export default function AuthForm() {
       theme="dark"
       showLinks={false}
       providers={[]}
-      redirectTo="http://localhost:3000/auth/callback"
+      redirectTo={redirectUrl}
     />
   );
 }
