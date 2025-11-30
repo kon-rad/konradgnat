@@ -47,6 +47,17 @@ export default function Post({ params }) {
   }
 
   console.log('post: ', post);
+
+  // Sanitize content by removing invalid characters from HTML tags
+  const sanitizeContent = (html: string) => {
+    if (!html) return '';
+    // Remove carriage returns and newlines within tag names
+    return html.replace(/<([^>]+)>/g, (_, tagContent) => {
+      const cleanedTag = tagContent.replace(/[\r\n\t]/g, '');
+      return `<${cleanedTag}>`;
+    });
+  };
+
   return (
     <div className="flex justify-center">
       <div className="max-w-prose">
@@ -57,7 +68,7 @@ export default function Post({ params }) {
           on {new Date(post.created_on).toISOString().slice(0, 10)}
         </p>
         <div className="mt-8 blog_post__content">
-          {parse(post.content)}
+          {parse(sanitizeContent(post.content))}
         </div>
       </div>
     </div>
