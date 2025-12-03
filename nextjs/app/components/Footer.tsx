@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer__links">
         {Links.map((item: any) => {
           return (
-            <div className="footer__linkItem">
+            <div key={item.url} className="footer__linkItem">
               <a href={item.url}>{item.icon}</a>
             </div>
           );
