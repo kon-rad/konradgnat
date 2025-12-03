@@ -34,8 +34,18 @@ const Links = [
     icon: <BsTwitter />,
   },
   {
-    url: 'https://www.youtube.com/channel/UCUIFdez2IItVFaDTJQyPywg/videos',
+    url: 'https://www.youtube.com/@konradgnat',
     title: 'YouTube - Drone Film Channel',
+    icon: <BsYoutube />,
+  },
+  {
+    url: 'https://www.youtube.com/@VoyagerDrone',
+    title: 'YouTube - Vlogs, Demos, Travel',
+    icon: <BsYoutube />,
+  },
+  {
+    url: 'https://www.youtube.com/@konradscodingtutorials',
+    title: 'YouTube - Coding Tutorials',
     icon: <BsYoutube />,
   },
   {
