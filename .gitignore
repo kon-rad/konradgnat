@@ -6,6 +6,7 @@ app/django
 bin
 static
 static_files
+!nextjs/public/static
 **/*/secret.py
 pyvenv.cfg
 
