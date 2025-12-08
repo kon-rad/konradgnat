@@ -31,7 +31,7 @@ const { chains, publicClient } = configureChains(
 
 const { connectors } = getDefaultWallets({
   appName: 'Konrad Gnat Portfolio',
-  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_ID,
+  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_ID || 'YOUR_PROJECT_ID',
   chains,
 });
 
