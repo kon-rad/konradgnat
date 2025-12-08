@@ -29,7 +29,12 @@ export default function Home() {
       }
       const data = await response.json();
       console.log('posts data: ', data);
-      setPosts(data);
+      const postsResponse = Array.isArray(data)
+        ? data
+        : Array.isArray(data?.posts)
+          ? data.posts
+          : [];
+      setPosts(postsResponse);
     } catch (error) {
       console.error('Error fetching posts:', error);
     } finally {
