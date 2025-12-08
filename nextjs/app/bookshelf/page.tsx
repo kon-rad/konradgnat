@@ -28,7 +28,12 @@ export default function Bookshelf() {
       const data = await response.json();
 
       console.log('books data: ', data);
-      setBooks(data);
+      const booksResponse = Array.isArray(data)
+        ? data
+        : Array.isArray(data?.books)
+          ? data.books
+          : [];
+      setBooks(booksResponse);
     } catch (error) {
       console.error('Error fetching books:', error);
     } finally {
