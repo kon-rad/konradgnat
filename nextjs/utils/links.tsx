@@ -49,6 +49,11 @@ const Links = [
     icon: <BsYoutube />,
   },
   {
+    url: 'https://www.youtube.com/@Augmilol',
+    title: 'YouTube - Augmi.lol - Interviews',
+    icon: <BsYoutube />,
+  },
+  {
     url: 'https://substack.com/@0xmakereth',
     title: 'Substack',
     icon: <SiSubstack />,

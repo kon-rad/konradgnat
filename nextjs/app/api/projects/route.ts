@@ -1,13 +1,31 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const projects = await prisma.blogProject.findMany({
-      orderBy: { created_on: 'desc' }
-    });
+    const { searchParams } = new URL(request.url);
+    const page = parseInt(searchParams.get('page') || '1');
+    const limit = parseInt(searchParams.get('limit') || '50');
+    const skip = (page - 1) * limit;
 
-    return NextResponse.json(projects);
+    const [projects, total] = await Promise.all([
+      prisma.blogProject.findMany({
+        orderBy: { created_on: 'desc' },
+        take: limit,
+        skip: skip,
+      }),
+      prisma.blogProject.count()
+    ]);
+
+    return NextResponse.json({
+      projects,
+      pagination: {
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit)
+      }
+    });
   } catch (error) {
     console.error('Error fetching projects:', error);
     return NextResponse.json(
