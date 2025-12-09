@@ -7,7 +7,7 @@ const Footer = () => {
         {Links.map((item: any) => {
           return (
             <div key={item.url} className="footer__linkItem">
-              <a href={item.url}>{item.icon}</a>
+              <a href={item.url} title={item.title}>{item.icon}</a>
             </div>
           );
         })}
