@@ -28,7 +28,7 @@ export default function Projects() {
       const data = await response.json();
 
       console.log('projects data: ', data);
-      setProjects(data);
+      setProjects(data.projects);
     } catch (error) {
       console.error('Error fetching projects:', error);
     } finally {
