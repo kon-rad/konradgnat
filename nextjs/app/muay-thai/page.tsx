@@ -32,11 +32,23 @@ export default function MuayThai() {
           <p className="font-semibold">
             Every Thursday 6PM in the NS Gym
           </p>
-          <p className="text-gray-700 mt-1">
-            $10 USD per session — First session free
+          <p className="text-gray-700 mt-3">
+            This class is offered on a pay-what-you-can basis to keep it
+            accessible to everyone.
           </p>
           <p className="text-gray-700 mt-1">
-            Pay with cash (MYR or USD), crypto or stripe payment link
+            Suggested donation: $5-10 USD
+          </p>
+          <p className="text-gray-700 mt-1">
+            Payment methods: Cash (MYR or USD), cryptocurrency, or{' '}
+            <a
+              href="https://buy.stripe.com/cNi9AUflJ9hj08odQxf7i00"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              stripe payment link
+            </a>
           </p>
         </div>
 
