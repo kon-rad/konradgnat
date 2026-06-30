@@ -271,4 +271,12 @@ export const NAV_ITEMS: Array<NavItem> = [
     href: '/links',
     label: 'Links',
   },
+  {
+    href: '/muay-thai',
+    label: 'Muay Thai',
+  },
+  {
+    href: '/yoga',
+    label: 'Yoga',
+  },
 ];
