@@ -1,4 +1,11 @@
 export default function MuayThai() {
+  const events = [
+    { date: 'Thursday, 2 July', time: '6:00 PM – 7:00 PM', url: 'https://ns.com/events/xfq37pk2' },
+    { date: 'Thursday, 16 July', time: '6:00 PM – 7:00 PM', url: 'https://ns.com/events/0d77cn87' },
+    { date: 'Thursday, 23 July', time: '6:00 PM – 7:00 PM', url: 'https://ns.com/events/tomnnmr9' },
+    { date: 'Thursday, 30 July', time: '6:00 PM – 7:00 PM', url: 'https://ns.com/events/d6dq7ak9' },
+  ];
+
   const agenda = [
     'Introduction to Muay Thai',
     'QiGong, breathwork, and meditation',
@@ -51,6 +58,29 @@ export default function MuayThai() {
             </a>
           </p>
         </div>
+
+        <h2 className="text-2xl font-semibold mb-4">Upcoming Sessions</h2>
+        <ul className="space-y-3 mb-8">
+          {events.map((event) => (
+            <li
+              key={event.url}
+              className="flex flex-wrap items-center justify-between gap-2 border rounded-lg p-4"
+            >
+              <div>
+                <p className="font-semibold text-gray-900">{event.date}</p>
+                <p className="text-gray-700 text-sm">{event.time}</p>
+              </div>
+              <a
+                href={event.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 underline whitespace-nowrap"
+              >
+                Register
+              </a>
+            </li>
+          ))}
+        </ul>
 
         <p className="text-gray-700 mb-4">
           Martial arts are a powerful practice for developing both physical

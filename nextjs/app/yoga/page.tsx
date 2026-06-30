@@ -1,4 +1,11 @@
 export default function Yoga() {
+  const events = [
+    { date: 'Saturday, 4 July', time: '10:00 AM – 11:00 AM', url: 'https://ns.com/events/gfmeqodr' },
+    { date: 'Saturday, 11 July', time: '10:00 AM – 11:00 AM', url: 'https://ns.com/events/btke8yf0' },
+    { date: 'Saturday, 18 July', time: '10:00 AM – 11:00 AM', url: 'https://ns.com/events/mctro80j' },
+    { date: 'Saturday, 25 July', time: '10:00 AM – 11:00 AM', url: 'https://ns.com/events/4mg5am3c' },
+  ];
+
   const benefits = [
     {
       title: 'Build strength & flexibility.',
@@ -89,6 +96,29 @@ export default function Yoga() {
             Drop-in · All levels · 60 minutes
           </p>
         </div>
+
+        <h2 className="text-2xl font-semibold mb-4">Upcoming Sessions</h2>
+        <ul className="space-y-3 mb-8">
+          {events.map((event) => (
+            <li
+              key={event.url}
+              className="flex flex-wrap items-center justify-between gap-2 border rounded-lg p-4"
+            >
+              <div>
+                <p className="font-semibold text-gray-900">{event.date}</p>
+                <p className="text-gray-700 text-sm">{event.time}</p>
+              </div>
+              <a
+                href={event.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 underline whitespace-nowrap"
+              >
+                Register
+              </a>
+            </li>
+          ))}
+        </ul>
 
         <h2 className="text-2xl font-semibold mb-4">Why spend the hour</h2>
         <ul className="space-y-3 text-gray-700 mb-8">
