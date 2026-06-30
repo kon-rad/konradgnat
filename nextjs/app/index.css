@@ -125,6 +125,9 @@ svg {
   .home__right {
     width: 100%;
   }
+  .content__container {
+    padding: 20px 16px;
+  }
 }
 .blog_post__content img {
   margin-bottom: 30px;
