@@ -1,9 +1,9 @@
 export default function Yoga() {
   const events = [
-    { date: 'Saturday, 4 July', time: '10:00 AM – 11:00 AM', url: 'https://ns.com/events/gfmeqodr' },
-    { date: 'Saturday, 11 July', time: '10:00 AM – 11:00 AM', url: 'https://ns.com/events/btke8yf0' },
-    { date: 'Saturday, 18 July', time: '10:00 AM – 11:00 AM', url: 'https://ns.com/events/mctro80j' },
-    { date: 'Saturday, 25 July', time: '10:00 AM – 11:00 AM', url: 'https://ns.com/events/4mg5am3c' },
+    { date: 'Sunday, 5 July', time: '10:00 AM – 11:00 AM', url: 'https://ns.com/events/gfmeqodr' },
+    { date: 'Sunday, 12 July', time: '10:00 AM – 11:00 AM', url: 'https://ns.com/events/btke8yf0' },
+    { date: 'Sunday, 19 July', time: '10:00 AM – 11:00 AM', url: 'https://ns.com/events/mctro80j' },
+    { date: 'Sunday, 26 July', time: '10:00 AM – 11:00 AM', url: 'https://ns.com/events/4mg5am3c' },
   ];
 
   const benefits = [
