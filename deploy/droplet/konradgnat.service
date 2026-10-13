@@ -1,0 +1,23 @@
+# konradgnat.com Next.js site on the secondbrain droplet. Caddy (Caddyfile.konradgnat) proxies to it.
+[Unit]
+Description=konradgnat.com (Next.js)
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=konradgnat
+Group=konradgnat
+WorkingDirectory=/srv/konradgnat/site/nextjs
+EnvironmentFile=/etc/konradgnat/env
+ExecStart=/usr/bin/node node_modules/next/dist/bin/next start -H 127.0.0.1 -p 3100
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/konradgnat/site/nextjs/.next
+
+[Install]
+WantedBy=multi-user.target

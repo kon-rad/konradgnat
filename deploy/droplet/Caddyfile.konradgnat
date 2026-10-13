@@ -1,0 +1,17 @@
+# konradgnat.com, imported by the droplet's main Caddyfile (secondbrain app/deploy/Caddyfile).
+# Installed as /etc/caddy/Caddyfile.konradgnat by deploy.sh in this folder.
+konradgnat.com {
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		-Server
+	}
+	reverse_proxy 127.0.0.1:3100
+	log {
+		output file /var/log/caddy/konradgnat.log
+	}
+}
+
+www.konradgnat.com {
+	redir https://konradgnat.com{uri} permanent
+}
