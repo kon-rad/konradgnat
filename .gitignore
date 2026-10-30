@@ -14,3 +14,4 @@ pyvenv.cfg
 
 .env
 build
+.gstack/
